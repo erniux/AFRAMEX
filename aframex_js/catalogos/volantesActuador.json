@@ -1,0 +1,322 @@
+[
+    {
+      "MODELO": "VFCPR10-0.625-0.281",
+      "DIAM EJE": 0.625,
+      "DIAM pasador": 0.281,
+      "DIAM": 10,
+      "C": 77,
+      "PESO": 3.1,
+      "num_refuerzos": 3,
+      "diam_cubo": 50.8
+    },
+    {
+      "MODELO": "VFCPR10-1.0-0.391",
+      "DIAM EJE": 1,
+      "DIAM pasador": 0.391,
+      "DIAM": 10,
+      "C": 77,
+      "PESO": 3.1,
+      "num_refuerzos": 3,
+      "diam_cubo": 50.8
+    },
+    {
+      "MODELO": "VFCPR6-0.625-0.281",
+      "DIAM EJE": 0.625,
+      "DIAM pasador": 0.281,
+      "DIAM": 6,
+      "C": 61,
+      "PESO": 1.1,
+      "num_refuerzos": 3,
+      "diam_cubo": 50.8
+    },
+    {
+      "MODELO": "VFCPR6-1.0-0.391",
+      "DIAM EJE": 1,
+      "DIAM pasador": 0.391,
+      "DIAM": 6,
+      "C": 61,
+      "PESO": 1.1,
+      "num_refuerzos": 3,
+      "diam_cubo": 50.8
+    },
+    {
+      "MODELO": "VFCPR8-0.625-0.281",
+      "DIAM EJE": 0.625,
+      "DIAM pasador": 0.281,
+      "DIAM": 8,
+      "C": 77,
+      "PESO": 1.9,
+      "num_refuerzos": 3,
+      "diam_cubo": 50.8
+    },
+    {
+      "MODELO": "VFCPR8-1.0-0.391",
+      "DIAM EJE": 1,
+      "DIAM pasador": 0.391,
+      "DIAM": 8,
+      "C": 77,
+      "PESO": 1.9,
+      "num_refuerzos": 3,
+      "diam_cubo": 50.8
+    },
+    {
+      "MODELO": "VTCPL12-0.625-0.281",
+      "DIAM EJE": 0.625,
+      "DIAM pasador": 0.281,
+      "DIAM": 12,
+      "C": 54,
+      "PESO": 3.2,
+      "num_refuerzos": 3,
+      "diam_cubo": 50.8
+    },
+    {
+      "MODELO": "VTCPL12-1.0-0.391",
+      "DIAM EJE": 1,
+      "DIAM pasador": 0.391,
+      "DIAM": 12,
+      "C": 54,
+      "PESO": 3.2,
+      "num_refuerzos": 3,
+      "diam_cubo": 50.8
+    },
+    {
+      "MODELO": "VTCPL14-1.0-0.391",
+      "DIAM EJE": 1,
+      "DIAM pasador": 0.391,
+      "DIAM": 14,
+      "C": 54,
+      "PESO": 3.4,
+      "num_refuerzos": 3,
+      "diam_cubo": 50.8
+    },
+    {
+      "MODELO": "VTCPL16-0.625-0.281",
+      "DIAM EJE": 0.625,
+      "DIAM pasador": 0.281,
+      "DIAM": 16,
+      "C": 54,
+      "PESO": 3.63,
+      "num_refuerzos": 4,
+      "diam_cubo": 50.8
+    },
+    {
+      "MODELO": "VTCPL16-1.0-0.391",
+      "DIAM EJE": 1,
+      "DIAM pasador": 0.391,
+      "DIAM": 16,
+      "C": 54,
+      "PESO": 3.63,
+      "num_refuerzos": 4,
+      "diam_cubo": 50.8
+    },
+    {
+      "MODELO": "VTCPL18-0.625-0.281",
+      "DIAM EJE": 0.625,
+      "DIAM pasador": 0.281,
+      "DIAM": 18,
+      "C": 54,
+      "PESO": 4.08,
+      "num_refuerzos": 4,
+      "diam_cubo": 50.8
+    },
+    {
+      "MODELO": "VTCPL18-1.0-0.391",
+      "DIAM EJE": 1,
+      "DIAM pasador": 0.391,
+      "DIAM": 18,
+      "C": 54,
+      "PESO": 4.08,
+      "num_refuerzos": 4,
+      "diam_cubo": 50.8
+    },
+    {
+      "MODELO": "VTCPL20-0.625-0.281",
+      "DIAM EJE": 0.625,
+      "DIAM pasador": 0.281,
+      "DIAM": 20,
+      "C": 54,
+      "PESO": 4.36,
+      "num_refuerzos": 4,
+      "diam_cubo": 50.8
+    },
+    {
+      "MODELO": "VTCPL20-1.0-0.391",
+      "DIAM EJE": 1,
+      "DIAM pasador": 0.391,
+      "DIAM": 20,
+      "C": 54,
+      "PESO": 4.36,
+      "num_refuerzos": 4,
+      "diam_cubo": 50.8
+    },
+    {
+      "MODELO": "VTCPL24-1.0-0.391",
+      "DIAM EJE": 1,
+      "DIAM pasador": 0.391,
+      "DIAM": 24,
+      "C": 54,
+      "PESO": 5.45,
+      "num_refuerzos": 4,
+      "diam_cubo": 50.8
+    },
+    {
+      "MODELO": "VTCPL30-1.0-0.391",
+      "DIAM EJE": 1,
+      "DIAM pasador": 0.391,
+      "DIAM": 30,
+      "C": 54,
+      "PESO": 6.35,
+      "num_refuerzos": 4,
+      "diam_cubo": 50.8
+    },
+    {
+      "MODELO": "VTCPL36-1.0-0.391",
+      "DIAM EJE": 1,
+      "DIAM pasador": 0.391,
+      "DIAM": 36,
+      "C": 54,
+      "PESO": 8.17,
+      "num_refuerzos": 4,
+      "diam_cubo": 50.8
+    },
+    {
+      "MODELO": "VTCPR12-0.625-0.281",
+      "DIAM EJE": 0.625,
+      "DIAM pasador": 0.281,
+      "DIAM": 12,
+      "C": 143,
+      "PESO": 3.2,
+      "num_refuerzos": 3,
+      "diam_cubo": 50.8
+    },
+    {
+      "MODELO": "VTCPR12-1.0-0.391",
+      "DIAM EJE": 1,
+      "DIAM pasador": 0.391,
+      "DIAM": 12,
+      "C": 143,
+      "PESO": 3.2,
+      "num_refuerzos": 3,
+      "diam_cubo": 50.8
+    },
+    {
+      "MODELO": "VTCPR14-0.625-0.281",
+      "DIAM EJE": 0.625,
+      "DIAM pasador": 0.281,
+      "DIAM": 14,
+      "C": 140,
+      "PESO": 3.4,
+      "num_refuerzos": 3,
+      "diam_cubo": 50.8
+    },
+    {
+      "MODELO": "VTCPR14-1.0-0.391",
+      "DIAM EJE": 1,
+      "DIAM pasador": 0.391,
+      "DIAM": 14,
+      "C": 140,
+      "PESO": 3.4,
+      "num_refuerzos": 3,
+      "diam_cubo": 50.8
+    },
+    {
+      "MODELO": "VTCPR16-0.625-0.281",
+      "DIAM EJE": 0.625,
+      "DIAM pasador": 0.281,
+      "DIAM": 16,
+      "C": 156,
+      "PESO": 3.63,
+      "num_refuerzos": 4,
+      "diam_cubo": 50.8
+    },
+    {
+      "MODELO": "VTCPR16-1.0-0.391",
+      "DIAM EJE": 1,
+      "DIAM pasador": 0.391,
+      "DIAM": 16,
+      "C": 156,
+      "PESO": 3.63,
+      "num_refuerzos": 4,
+      "diam_cubo": 50.8
+    },
+    {
+      "MODELO": "VTCPR18-0.625-0.281",
+      "DIAM EJE": 0.625,
+      "DIAM pasador": 0.281,
+      "DIAM": 18,
+      "C": 143,
+      "PESO": 4.08,
+      "num_refuerzos": 4,
+      "diam_cubo": 50.8
+    },
+    {
+      "MODELO": "VTCPR18-1.0-0.391",
+      "DIAM EJE": 1,
+      "DIAM pasador": 0.391,
+      "DIAM": 18,
+      "C": 143,
+      "PESO": 4.08,
+      "num_refuerzos": 4,
+      "diam_cubo": 50.8
+    },
+    {
+      "MODELO": "VTCPR20-0.625-0.281",
+      "DIAM EJE": 0.625,
+      "DIAM pasador": 0.281,
+      "DIAM": 20,
+      "C": 185,
+      "PESO": 4.36,
+      "num_refuerzos": 4,
+      "diam_cubo": 50.8
+    },
+    {
+      "MODELO": "VTCPR20-1.0-0.391",
+      "DIAM EJE": 1,
+      "DIAM pasador": 0.391,
+      "DIAM": 20,
+      "C": 185,
+      "PESO": 4.36,
+      "num_refuerzos": 4,
+      "diam_cubo": 50.8
+    },
+    {
+      "MODELO": "VTCPR24-0.625-0.281",
+      "DIAM EJE": 0.625,
+      "DIAM pasador": 0.281,
+      "DIAM": 24,
+      "C": 223,
+      "PESO": 5.45,
+      "num_refuerzos": 4,
+      "diam_cubo": 50.8
+    },
+    {
+      "MODELO": "VTCPR24-1.0-0.391",
+      "DIAM EJE": 1,
+      "DIAM pasador": 0.391,
+      "DIAM": 24,
+      "C": 223,
+      "PESO": 5.45,
+      "num_refuerzos": 4,
+      "diam_cubo": 50.8
+    },
+    {
+      "MODELO": "VTCPR30-1.0-0.391",
+      "DIAM EJE": 1,
+      "DIAM pasador": 0.391,
+      "DIAM": 30,
+      "C": 264,
+      "PESO": 6.35,
+      "num_refuerzos": 4,
+      "diam_cubo": 50.8
+    },
+    {
+      "MODELO": "VTCPR36-1.0-0.391",
+      "DIAM EJE": 1,
+      "DIAM pasador": 0.391,
+      "DIAM": 36,
+      "C": 254,
+      "PESO": 8.17,
+      "num_refuerzos": 8,
+      "diam_cubo": 76.2
+    }
+   ]

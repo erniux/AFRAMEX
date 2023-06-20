@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<head>
+    <title>Json</title>
+</head>
+<body>
+    <div id="nombre"></div>
+
+
+    <script>
+
+    let datosJSON ;
+    let xhr = new XMLHttpRequest();
+
+    xhr.open('GET', "aframex_js/catalogos/pesoPromedio.json", true);
+    xhr.responseType = 'json';
+    xhr.onload = function() {
+        if(xhr.status === 200 ) {
+            datosJSON = xhr.response;
+            let elementoText = document.getElementById("nombre");
+            elementoText.textContent = datosJSON[0].CE_mCA;
+
+        }else{
+            console.log("manejar el error");
+        }
+    }
+
+    xhr.send();
+
+    
+    </script>
+</body>
+
+</html>

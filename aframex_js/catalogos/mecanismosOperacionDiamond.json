@@ -1,0 +1,197 @@
+[
+ {
+   "MODELO": "12BG11.25",
+   "CAPACIDAD": 22500,
+   "VASTAGO": [
+      76.2,
+      63.5
+   ],
+   "PESO": 26.77,
+   "REL": 11.25,
+   "Max Torque": 1250,
+   "Ventaja": 10,
+   "Altura": 133.6,
+   "Diam eje": 0.875,
+   "BRIDA TIPO": "FA16, 7.63"
+},
+ {
+   "MODELO": "12BG3.75",
+   "CAPACIDAD": 22500,
+   "VASTAGO": [
+      76.2,
+      63.5
+   ],
+   "PESO": 17.25,
+   "REL": 3.75,
+   "Max Torque": 1250,
+   "Ventaja": 3.4,
+   "Altura": 68.9,
+   "Diam eje": 1,
+   "BRIDA TIPO": "FA16, 7.63"
+},
+ {
+   "MODELO": "24BG17.32",
+   "CAPACIDAD": 36290,
+   "VASTAGO": [
+      92.07,
+      73.96
+   ],
+   "PESO": 43.2,
+   "REL": 17.2,
+   "Max Torque": 2250,
+   "Ventaja": 17.2,
+   "Altura": 179.4,
+   "Diam eje": 1,
+   "BRIDA TIPO": "FA25, 7.63"
+},
+ {
+   "MODELO": "24BG4.33",
+   "CAPACIDAD": 36290,
+   "VASTAGO": [
+      92.07,
+      73.96
+   ],
+   "PESO": 29.5,
+   "REL": 4.33,
+   "Max Torque": 2250,
+   "Ventaja": 3.9,
+   "Altura": 84.1,
+   "Diam eje": 1,
+   "BRIDA TIPO": "FA25, 7.63"
+},
+ {
+   "MODELO": "36BG20.68",
+   "CAPACIDAD": 49900,
+   "VASTAGO": [
+      100.1,
+      88.9
+   ],
+   "PESO": 58.1,
+   "REL": 18.5,
+   "Max Torque": 3500,
+   "Ventaja": 18.5,
+   "Altura": 188.9,
+   "Diam eje": 1,
+   "BRIDA TIPO": "FA25"
+},
+ {
+   "MODELO": "36BG5.17",
+   "CAPACIDAD": 49900,
+   "VASTAGO": [
+      100.1,
+      88.9
+   ],
+   "PESO": 44.47,
+   "REL": 4.7,
+   "Max Torque": 3500,
+   "Ventaja": 4.7,
+   "Altura": 95.2,
+   "Diam eje": 1,
+   "BRIDA TIPO": "FA25 "
+},
+ {
+   "MODELO": "3BG3",
+   "CAPACIDAD": 6800,
+   "VASTAGO": [
+      41.27,
+      31.75
+   ],
+   "PESO": 5.9,
+   "REL": 3,
+   "Max Torque": 250,
+   "Ventaja": 2.7,
+   "Altura": 57.3,
+   "Diam eje": 0.75,
+   "BRIDA TIPO": "FA12"
+},
+ {
+   "MODELO": "48BG39",
+   "CAPACIDAD": 74863,
+   "VASTAGO": [
+      127,
+      114.3
+   ],
+   "PESO": 102.9,
+   "REL": 35,
+   "Max Torque": 6000,
+   "Ventaja": 35,
+   "Altura": 109.2,
+   "Diam eje": 1,
+   "BRIDA TIPO": "FA30"
+},
+ {
+   "MODELO": "48BG6.5",
+   "CAPACIDAD": 74863,
+   "VASTAGO": [
+      127,
+      114.3
+   ],
+   "PESO": 81.67,
+   "REL": 5.6,
+   "Max Torque": 6000,
+   "Ventaja": 5.6,
+   "Altura": 109.2,
+   "Diam eje": 1,
+   "BRIDA TIPO": "FA30"
+},
+ {
+   "MODELO": "60BG48",
+   "CAPACIDAD": 113430,
+   "VASTAGO": [
+      152.4,
+      127
+   ],
+   "PESO": 147.5,
+   "REL": 43.5,
+   "Max Torque": 8000,
+   "Ventaja": 43.5,
+   "Altura": 124.2,
+   "Diam eje": 1,
+   "BRIDA TIPO": "FA40"
+},
+ {
+   "MODELO": "60BG6",
+   "CAPACIDAD": 113430,
+   "VASTAGO": [
+      152.4,
+      127
+   ],
+   "PESO": 108.9,
+   "REL": 5.4,
+   "Max Torque": 8000,
+   "Ventaja": 5.4,
+   "Altura": 124.2,
+   "Diam eje": 1,
+   "BRIDA TIPO": "FA40"
+},
+ {
+   "MODELO": "7.2BG3",
+   "CAPACIDAD": 10200,
+   "VASTAGO": [
+      58.72,
+      44.45
+   ],
+   "PESO": 8.17,
+   "REL": 3,
+   "Max Torque": 600,
+   "Ventaja": 2.7,
+   "Altura": 57.3,
+   "Diam eje": 0.875,
+   "BRIDA TIPO": "FA14"
+},
+ {
+   "MODELO": "7.2BG6",
+   "CAPACIDAD": 10200,
+   "VASTAGO": [
+      58.72,
+      44.45
+   ],
+   "PESO": 13.62,
+   "REL": 6,
+   "Max Torque": 600,
+   "Ventaja": 5.4,
+   "Altura": 108.8,
+   "Diam eje": 0.875,
+   "BRIDA TIPO": "FA14"
+}
+]
