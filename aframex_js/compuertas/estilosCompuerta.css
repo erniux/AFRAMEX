@@ -1,390 +1,473 @@
 body {
-	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-	text-align: center;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  text-align: center;
 }
 
 header {
-	background: #FFFBB9;
-	border: 1px solid #999999;
-	padding: 20px;
+  background: #fffbb9;
+  border: 1px solid #999999;
+  padding: 20px;
 }
 
 nav {
-	background-color: #CCCCCC;
-	padding: 5px 15px;
+  background-color: #cccccc;
+  padding: 5px 15px;
 }
 
-.ancho_util, .altura_util, .carga_maxima, .niv_piso_oper, 
-.niv_fondo_comp, .peso_promedio, .espacio_entre_apoyos {
-	background-color: #A0E7E5;
-	text-align: center;
-	width: 85px;
-	height: 35px;
-	border-radius: 7%;
-	
+.ancho_util,
+.altura_util,
+.carga_maxima,
+.niv_piso_oper,
+.niv_fondo_comp,
+.peso_promedio,
+.espacio_entre_apoyos {
+  background-color: #a0e7e5;
+  text-align: center;
+  width: 85px;
+  height: 35px;
+  border-radius: 7%;
 }
 
-
-.perimetro_sello, .peso_tablero_compuerta, .coeficiente_friccion, .coeficiente_friccion_junta,
-.superficio_junta_presion, .diametro_vastago, .coef_seguridad, .apoyos_vastago, .altura_pedestal, .altura_marco,
-.marco_pedestal, .marco_integral, .marco_repisa, .longitud_pandeo, .carga_pandeo, .carga_max_srv, .fuerza_empuje, 
-.momento_incercia, .young, .metro_columna_agua {
-	background-color: #FFFACD;
-	text-align: center;
-	width: 85px;
-    height: 35px;
-	border-radius: 7%;
+.perimetro_sello,
+.peso_tablero_compuerta,
+.coeficiente_friccion,
+.coeficiente_friccion_junta,
+.superficio_junta_presion,
+.diametro_vastago,
+.coef_seguridad,
+.apoyos_vastago,
+.altura_pedestal,
+.altura_marco,
+.marco_pedestal,
+.marco_integral,
+.marco_repisa,
+.longitud_pandeo,
+.carga_pandeo,
+.carga_max_srv,
+.fuerza_empuje,
+.momento_incercia,
+.young,
+.metro_columna_agua,
+.par-subir-compuerta,
+.usar-actuador,
+.par-bajar-compuerta,
+.vueltas-vastago,
+.vueltas-manivela,
+.factor-compuerta,
+.paso-rosca-vastago,
+.tga-vastago,
+.fm-vastago {
+  background-color: #fffacd;
+  text-align: center;
+  width: 85px;
+  height: 35px;
+  border-radius: 7%;
 }
 
-	
-.esfuerzo_apertura, .esfuerzo_cierre, .empuje_hidraulico_sobre_compuerta, .esfuerzo_apertura_kgf,
-.esfuerzo_cierre_kgf, .empuje_hidraulico_sobre_compuerta_kgf, .esfuerzo_apertura_lbf,
-.esfuerzo_cierre_lbf, .empuje_hidraulico_sobre_compuerta_lbf, .peso_tablero_compuerta_round,
-.peso_marco, .peso_vastago, .peso_pedestal, .peso_repisa, .peso_sop_vastago, .peso_actuador,
-.peso_volante, .peso_accesorios, .peso_total {
-	background-color: #FF8C00;
-	text-align: center;
-	width: 85px;
-	border-radius: 7%;
-	height: 35px;
-
+.esfuerzo_apertura,
+.esfuerzo_cierre,
+.empuje_hidraulico_sobre_compuerta,
+.esfuerzo_apertura_kgf,
+.esfuerzo_cierre_kgf,
+.empuje_hidraulico_sobre_compuerta_kgf,
+.esfuerzo_apertura_lbf,
+.esfuerzo_cierre_lbf,
+.empuje_hidraulico_sobre_compuerta_lbf,
+.peso_tablero_compuerta_round,
+.peso_marco,
+.peso_vastago,
+.peso_pedestal,
+.peso_repisa,
+.peso_sop_vastago,
+.peso_actuador,
+.peso_volante,
+.peso_accesorios,
+.peso_total {
+  background-color: #ff8c00;
+  text-align: center;
+  width: 85px;
+  border-radius: 7%;
+  height: 35px;
 }
 
-.actuador_marca, .actuador_modelo {
-	background-color: #FF8C00;
-	text-align: center;
-	width: 200px;
+.validacion-vastago-al-pandeo {
+  background-color: #ffffff;
+  text-align: center;
+  width: 85px;
+  border-radius: 7%;
+  height: 35px;
+  margin-left: 25px;
 }
 
-.importe_flete, .fianza, .transporte, .anticipo, .factor_utilidad{
-	background-color: #A0E7E5 ;
-	text-align: center;
-	width: 85px;
-	height: 35px;
-	border-radius: 7%;
+.actuador_marca,
+.actuador_modelo {
+  background-color: #ff8c00;
+  text-align: center;
+  width: 200px;
+}
+
+.importe_flete,
+.fianza,
+.transporte,
+.anticipo,
+.factor_utilidad {
+  background-color: #a0e7e5;
+  text-align: center;
+  width: 85px;
+  height: 35px;
+  border-radius: 7%;
 }
 
 select {
-    word-wrap: normal;
-    background-color: #fad3cf;
-    width: 125px;
-	height: 37px;
-	margin-left: 5.5px;
+  word-wrap: normal;
+  background-color: #fad3cf;
+  width: 125px;
+  height: 37px;
+  margin-left: 5.5px;
 }
 
 .parametros-1 {
-	height: 15px;
-	padding: 20px;
-	width: 250px;  
+  height: 15px;
+  padding: 20px;
+  width: 250px;
 }
 
 .parametros-ocultos {
-	visibility: hidden;
+  visibility: hidden;
 }
 
 .parametros-1 > input {
-	margin-left: 5px;
+  margin-left: 5px;
 }
 
-.parametros-1 > .tooltip >label {
-	background-color: #cdcdcd;
-    color: black;
-    margin-right: -9px;
-    border-bottom-left-radius: 5px;
-    padding: 8px 13px 10px;
-    border-top-left-radius: 5px;
+.parametros-1 > .tooltip > label {
+  background-color: #cdcdcd;
+  color: black;
+  margin-right: -9px;
+  border-bottom-left-radius: 5px;
+  padding: 8px 13px 10px;
+  border-top-left-radius: 5px;
 }
 
 .label-superficio_junta_presion {
-	margin-left: -22px;
+  margin-left: -22px;
 }
 
-.label-peso_tablero_compuerta, .label-empuje_hidraulico_sobre_compuerta {
-	margin-left: 10px;
+.label-peso_tablero_compuerta,
+.label-empuje_hidraulico_sobre_compuerta {
+  margin-left: 10px;
 }
 
 .label-esfuerzo_apertura {
-	margin-left: -25px;
-
+  margin-left: -25px;
 }
 
 .label-empuje_hidraulico_sobre_compuerta_kgf {
-	margin-left: -15px;
+  margin-left: -15px;
 }
 
 .label-empuje_hidraulico_sobre_compuerta_lbf {
-	margin-left: 10px;
+  margin-left: 10px;
 }
 
 .peso_marco {
-	margin-left: 25px;
-} 
-
-.peso_vastago {
-	margin-left: 13px;
+  margin-left: 25px;
 }
 
-.peso_pedestal {
-	margin-left: 8px;
+.peso_vastago {
+  margin-left: 13px;
+}
+
+.peso_pedestal,
+.vueltas-vastago {
+  margin-left: 8px;
 }
 
 .peso_repisa {
-	margin-left: 20px;
+  margin-left: 20px;
 }
 
 .peso_sop_vastago {
-	margin-left: 3px;
+  margin-left: 3px;
 }
 
 .peso_actuador {
-	margin-left: 5px;
+  margin-left: 5px;
 }
 
-.peso_volante  {
-	margin-left: 17px;
+.peso_volante {
+  margin-left: 17px;
 }
 
-.peso_accesorios {
-	margin-left: 23px;
+.peso_accesorios,
+.fm-vastago {
+  margin-left: 23px;
 }
 
 .peso_total {
-	margin-left: 19px;
+  margin-left: 19px;
 }
-
 
 .label-vastago {
-	margin-left: 46px;
+  margin-left: 46px;
 }
 
-.carga_max_srv, .momento_incercia {
-	margin-left:9px;
+.carga_max_srv,
+.momento_incercia {
+  margin-left: 9px;
 }
 
 .marco_repisa {
-	margin-left: 4px;
+  margin-left: 4px;
 }
 
-.marco_integral, .carga_pandeo  {
-	margin-left: 7px;
+.marco_integral,
+.carga_pandeo {
+  margin-left: 7px;
 }
 .diametro_vastago {
-	margin-left: 9px;
+  margin-left: 9px;
 }
 
+.usar-actuador {
+  margin-left: 58px;
+}
+.label-factor-compuerta {
+  margin-left: 17px;
+}
+.par-subir-compuerta,
+.par-bajar-compuerta,
+.factor-compuerta {
+  margin-left: 20px;
+}
 
+.paso-rosca-vastago {
+  margin-left: 5px;
+}
+
+.tga-vastago {
+  margin-left: 14px;
+}
 
 .parametros {
-	width: 300px;
-	margin: 20px;
-	padding: 10px;
-	border: 1px solid #FF8C00;
-	float: left;
-	
+  width: 300px;
+  margin: 20px;
+  padding: 10px;
+  border: 1px solid #ff8c00;
+  float: left;
 }
 
 .otros-parametros {
-	height: 50px;
-	border-collapse: collapse;
-	width: 100%;
-
+  height: 50px;
+  border-collapse: collapse;
+  width: 100%;
 }
 
 .otros-parametros > label {
-	background-color: #cdcdcd;
-    color: black;
-    margin-right: -9px;
-    border-bottom-left-radius: 5px;
-    padding: 8px 13px 10px;
-    border-top-left-radius: 5px;
-
+  background-color: #cdcdcd;
+  color: black;
+  margin-right: -9px;
+  border-bottom-left-radius: 5px;
+  padding: 8px 13px 10px;
+  border-top-left-radius: 5px;
 }
 
 .calculaBtn {
-	background: #1a73e8;
-    color: white;
-    border-radius: 4px;
-    height: 50px;
-    width: 100;
-    font-size: 22px;
-	box-shadow: 0px 2px 4px rgba(0,0,0,1);
+  background: #1a73e8;
+  color: white;
+  border-radius: 4px;
+  height: 50px;
+  width: 100;
+  font-size: 22px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 1);
 }
 
 .calculaBtn:hover {
-	background: white;
-	color: #1a73e8;
+  background: white;
+  color: #1a73e8;
 }
 
 .botones {
-	border-collapse: collapse;
-	width: 100%;
-
+  border-collapse: collapse;
+  width: 100%;
 }
 
 .botones > button {
-    border-radius: 4px;
-    height: 50px;
-	width: fit-content;
-    font-size: 18px;
-	box-shadow: 0px 2px 4px rgba(0,0,0,1);
-
+  border-radius: 4px;
+  height: 50px;
+  width: fit-content;
+  font-size: 18px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 1);
 }
 
 .actuadorBtn {
-	background: #e5e81a;
-    color: white;
-	border-radius: 4px;
-    height: 50px;
-	width: fit-content;
-    font-size: 18px;
-	box-shadow: 0px 2px 4px rgba(0,0,0,1);
+  background: #e5e81a;
+  color: white;
+  border-radius: 4px;
+  height: 50px;
+  width: fit-content;
+  font-size: 18px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 1);
 }
 
 .actuadorBtn:hover {
-	background: white;
-    color: #e5e81a;
-
+  background: white;
+  color: #e5e81a;
 }
 
 .memoriaBtn {
-	background: #c61ae8;
-    color: white;
-	border-radius: 4px;
-    height: 50px;
-	width: fit-content;
-    font-size: 18px;
-	box-shadow: 0px 2px 4px rgba(0,0,0,1);
+  background: #c61ae8;
+  color: white;
+  border-radius: 4px;
+  height: 50px;
+  width: fit-content;
+  font-size: 18px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 1);
 }
 
 .memoriaBtn:hover {
-	color: #c61ae8;
-    background: white;
-
+  color: #c61ae8;
+  background: white;
 }
 
-.memoriaBtn:disabled, .volanteBtn:disabled, .actuadorBtn:disabled {
-	background: #ccc;
+.memoriaBtn:disabled,
+.volanteBtn:disabled,
+.actuadorBtn:disabled {
+  background: #ccc;
 }
 
 .volanteBtn {
-	background: #1ae824;
-    color: white;
-	border-radius: 4px;
-    height: 50px;
-	width: fit-content;
-    font-size: 18px;
-	box-shadow: 0px 2px 4px rgba(0,0,0,1);
+  background: #1ae824;
+  color: white;
+  border-radius: 4px;
+  height: 50px;
+  width: fit-content;
+  font-size: 18px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 1);
 }
 
 .volanteBtn:hover {
-	color: #1ae824;
-    background: white;
+  color: #1ae824;
+  background: white;
 }
 
 .modalDialog {
-	position: fixed;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	background: rgba(122,122,122,0.8);
-	z-index: 99999;
-	opacity:0;
-	-webkit-transition: opacity 400ms ease-in;
-	-moz-transition: opacity 400ms ease-in;
-	transition: opacity 400ms ease-in;
-	pointer-events: none;
-	/*max-height: calc(100vh - 210px);*/
-    overflow-y: auto;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(122, 122, 122, 0.8);
+  z-index: 99999;
+  opacity: 0;
+  -webkit-transition: opacity 400ms ease-in;
+  -moz-transition: opacity 400ms ease-in;
+  transition: opacity 400ms ease-in;
+  pointer-events: none;
+  /*max-height: calc(100vh - 210px);*/
+  overflow-y: auto;
 }
 .modalDialog:target {
-	opacity:1;
-	pointer-events: auto;
+  opacity: 1;
+  pointer-events: auto;
 }
 .modalDialog > div {
-	width: 600px;
-	position: relative;
-	margin: 10% auto;
-	padding: 5px 20px 13px 20px;
-	border-radius: 10px;
-	background: #fff;
-	background: -moz-linear-gradient(#fff, #999);
-	background: -webkit-linear-gradient(#fff, #999);
-	background: -o-linear-gradient(#fff, #999);
+  width: 600px;
+  position: relative;
+  margin: 10% auto;
+  padding: 5px 20px 13px 20px;
+  border-radius: 10px;
+  background: #fff;
+  background: -moz-linear-gradient(#fff, #999);
+  background: -webkit-linear-gradient(#fff, #999);
+  background: -o-linear-gradient(#fff, #999);
   -webkit-transition: opacity 400ms ease-in;
--moz-transition: opacity 400ms ease-in;
-transition: opacity 400ms ease-in;
+  -moz-transition: opacity 400ms ease-in;
+  transition: opacity 400ms ease-in;
 }
 .close {
-	background: #606061;
-	color: #FFFFFF;
-	line-height: 25px;
-	position: absolute;
-	right: -12px;
-	text-align: center;
-	top: -10px;
-	width: 24px;
-	text-decoration: none;
-	font-weight: bold;
-	-webkit-border-radius: 12px;
-	-moz-border-radius: 12px;
-	border-radius: 12px;
-	-moz-box-shadow: 1px 1px 3px #000;
-	-webkit-box-shadow: 1px 1px 3px #000;
-	box-shadow: 1px 1px 3px #000;
+  background: #606061;
+  color: #ffffff;
+  line-height: 25px;
+  position: absolute;
+  right: -12px;
+  text-align: center;
+  top: -10px;
+  width: 24px;
+  text-decoration: none;
+  font-weight: bold;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  border-radius: 12px;
+  -moz-box-shadow: 1px 1px 3px #000;
+  -webkit-box-shadow: 1px 1px 3px #000;
+  box-shadow: 1px 1px 3px #000;
 }
-.close:hover { background: #00d9ff; }
+.close:hover {
+  background: #00d9ff;
+}
 
 a {
-	 text-decoration: none;
+  text-decoration: none;
 }
 
 .tooltip {
-	position: relative;
-	display: inline-block;
-  }
-  
-  .tooltip .tooltiptext {
-	visibility: hidden;
-	width: 120px;
-	background-color: #555;
-	color: #fff;
-	text-align: center;
-	border-radius: 6px;
-	padding: 5px 0;
-	position: absolute;
-	z-index: 1;
-	bottom: 125%;
-	left: 50%;
-	margin-left: -60px;
-	opacity: 0;
-	transition: opacity 0.3s;
-  }
-  
-  .tooltip .tooltiptext::after {
-	content: "";
-	position: absolute;
-	top: 100%;
-	left: 50%;
-	margin-left: -5px;
-	border-width: 5px;
-	border-style: solid;
-	border-color: #555 transparent transparent transparent;
-  }
+  position: relative;
+  display: inline-block;
+}
 
-  .tooltip:hover .tooltiptext {
-	visibility: visible;
-	opacity: 1;
-  }
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
 
-  .tablaMemoria, .tablaPesos {
-	width: 100%;
-	border-collapse: collapse;
-  }
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
 
-  .tablaMemoria > td {
-	border: 1px solid black;
-  	align-self:center ;
-	padding: 0.5rem 3rem;
-	font-size: 1rem;
-	}
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+.tablaMemoria,
+.tablaPesos {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tablaMemoria > td {
+  border: 1px solid black;
+  align-self: center;
+  padding: 0.5rem 3rem;
+  font-size: 1rem;
+}
+
+.label-usar-actuador {
+	margin-left: 52px;
+}
+
+.label-vueltas-vastago, 
+.label-vueltas-manivela {
+	margin-left: 54px;
+}
+

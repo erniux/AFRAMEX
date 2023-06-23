@@ -1,10 +1,7 @@
-
-let pesoPromedioJSON;
-
 function calculaPesoPromedio() {
 	
 	let l = parseInt(document.getElementById("ancho_util").value);
-	let ce = roundUp(parseFloat(document.getElementById("carga_maxima").value),1);
+	let ce = parseFloat(document.getElementById("carga_maxima").value);
 
 	if (ce < 0.5) {
 		ce = 0.5;
@@ -17,31 +14,100 @@ function calculaPesoPromedio() {
 
 		for (let propiedad of pesoPromedioJSON) {
 			if (ce === propiedad.CE_mCA & l%10 === 0 ) { 
-				let elementoText = document.getElementById("peso_promedio");
+				let elementoText = document.querySelector(".peso_promedio");
         		elementoText.value = propiedad[l];
 				break;
 			}else if (l%10 != 0) {
-				console.log("interpolacion del proximo");
 				let restar = l%10;
 				let primerNumeroL = l-restar;
-				console.log(primerNumeroL);
 				let segundoNumeroL = l-restar +10;
-				console.log(segundoNumeroL);
 				let primerNumeroPp = propiedad[primerNumeroL];
-				console.log(primerNumeroPp);
 				let segundoNumeroPp = propiedad[segundoNumeroL];
-				console.log(segundoNumeroPp);
 				let fraccion = (l - primerNumeroL) / (segundoNumeroL - primerNumeroL);
 				let pp = primerNumeroPp + (segundoNumeroPp - primerNumeroPp ) * fraccion;
-				console.log(pp);
-				let elementoText = document.getElementById("peso_promedio");
+				let elementoText = document.querySelector(".peso_promedio");
         		elementoText.value = pp;
 				break;
 			}
 		}
-
 	})
 	.catch(function(error) {alert(error)})
+}
+
+
+async function calculaPasoVastago(d, diametroVastago, pi, esfuerzoApertura, esfuerzoCierre, momentoInerciaVastago ) {
+	let f = parseFloat(document.querySelector(".factor-compuerta").value);
+	let vastagos  = [];
+	let catalogo = await fetch("../catalogos/diametroVastago.json");
+	let datos = await catalogo.json();
+	let numero_vueltas_manivela = 0;
+	 
+	for (let propiedad of datos) {
+		if ( d === propiedad.diametro_vastago_mm) {
+			let paso = await propiedad.pitch_cm;
+			let fm = diametroVastago*10-(paso*10);
+			let tga = (paso*10)/(pi*fm);
+			let parSubirCompuerta = esfuerzoApertura*10*(tga+f)*(fm/2000);
+			let parBajarCompuerta = esfuerzoCierre*10*(tga+f)*(fm/2000);
+			document.querySelector('.paso-rosca-vastago').value = paso;
+			document.querySelector('.par-subir-compuerta').value = parSubirCompuerta.toLocaleString();
+			document.querySelector('.par-bajar-compuerta').value = parBajarCompuerta.toLocaleString();
+			document.querySelector('.factor-compuerta').value = f;
+			document.querySelector('.tga-vastago').value = tga;
+			document.querySelector('.fm-vastago').value = fm;
+
+			if ((esfuerzoApertura/0.981)<1000){
+				document.querySelector('.usar-actuador').value = 'DYNATORQUE';
+			}else {
+				document.querySelector('.usar-actuador').value = 'DIAMOND';
+				numero_vueltas_manivela = roundUp((momentoInerciaVastago / paso),0);
+				document.querySelector('.vueltas-vastago').value = numero_vueltas_manivela;
+
+				let mecanismos = await fetch("../catalogos/mecanismosOperacionDiamond.json");
+				let datos = await mecanismos.json();
+				for (let m of datos) {
+					if (m.VASTAGO_d_maxT_mm>=d 
+						&& m.vastago_d_max_ka_mm>=d 
+						&& m.capacidad_ka_Kg >0 
+						&& roundUp(m.max_torque_salida_Lb_Ft/0.737562,0) > parSubirCompuerta
+						&& m.max_torque_salida_Lb_Ft>parSubirCompuerta 
+						&& m.capacidad_ka_Kg>esfuerzoApertura/0.981 
+						&& d<m.vastago_d_max_ka_mm 
+						&& d<m.VASTAGO_d_maxT_mm) {
+							vastagos.push(m)
+						}
+					}
+				}
+			}
+		}
+	let selActuadores = document.querySelector('.actuadores');
+	selActuadores.options.length = 0;
+	for (let actuador in vastagos) {
+		selActuadores.innerHTML += "<option value='" + vastagos[actuador].modelo + "'>" + vastagos[actuador].modelo + "</option>";
+	}
+	calculaVueltasManivela(selActuadores.value, numero_vueltas_manivela);
+}
+
+
+function reloadActuadores() {
+	let vueltasVastago = document.querySelector('.vueltas-vastago').value;
+
+	let modeloActuador = document.getElementById('lista-posibles-actuadores').value;
+
+	calculaVueltasManivela(modeloActuador, vueltasVastago);
+	
+	
+}
+
+async function calculaVueltasManivela(modelo, numero_vueltas_vastago) {
+	let mecanismos = await fetch("../catalogos/mecanismosOperacionDiamond.json");
+	let datos = await mecanismos.json();
+	for (let m of datos) {
+		if (m.modelo === modelo) {
+			let vueltasManivela = m.rel_Radio*numero_vueltas_vastago;
+			document.querySelector('.vueltas-manivela').value = vueltasManivela;
+		}
+	}
 }
 
 
@@ -55,11 +121,8 @@ function calculaCotizacion() {
 	let ce = Number(document.querySelector(".carga_maxima").value);
 	let npo = Number(document.querySelector(".niv_piso_oper").value);
 	let nfc = Number(document.querySelector(".niv_fondo_comp").value);
-	//abrir el archivo pesoPromedio.json para encontrar los valores
-
 	let pp = Number(document.querySelector('.peso_promedio').value);
 
-	document.querySelector('.metro_columna_agua').value = 4.25;
 	let d = Number(document.querySelector('.diam_vastago').value);
 	let ll = Number(document.querySelector('.espacio_entre_apoyos').value);
 	let s = Number(document.querySelector('.coef_seguridad').value);
@@ -102,6 +165,7 @@ function calculaCotizacion() {
 
 	document.querySelector('.fuerza_empuje').value = (esfuerzoCierre/0.981).toLocaleString();
 
+
 	let pesoMarco = (((((h*4)+l)*0.01*0.3*50)+((l+27)*0.01*0.33*50))*1.45);
 	document.querySelector('.peso_marco').value = roundUp(pesoMarco,0); 
 
@@ -109,15 +173,14 @@ function calculaCotizacion() {
 	let diametroVastago = d/10;
 	document.querySelector('.diametro_vastago').value = diametroVastago;
 
-  let alturaPedestal;
-
+  	let alturaPedestal;
 	if(((npo-nfc)*1000) > ((h*20)+300)){
-    alturaPedestal = 950;
+    	alturaPedestal = 950;
 	}else if(((h*20)-(npo-nfc)*1000)<950){
 		alturaPedestal = 950-((h*20)-(npo-nfc))*1000;
-		}else{
+	}else{
     alturaPedestal = 0;
-  }
+    }
 	document.querySelector('.altura_pedestal').value = alturaPedestal;
 
 	let pesoPedestal = alturaPedestal*30*0.001;
@@ -133,7 +196,6 @@ function calculaCotizacion() {
 	 pesoVastago = ((pesoVastago*valor)/1000)*7874;
 	document.querySelector('.peso_vastago').value = pesoVastago.toLocaleString();
 
-  /*peso=((D32*D27)+D29*(D21-((D20+10)/2000))*D28+D26+K37)*1.33*/
 	let esfuerzoApertura = ((empujeHidraulicoComp*kf) +supJuntaPresion*(ce-((h+10)/2000))*kj+pesoTableroCompuerta+pesoVastago)*1.33
 	document.querySelector('.esfuerzo_apertura').value = esfuerzoApertura.toLocaleString(); 
 	document.querySelector('.esfuerzo_apertura_kgf').value = (esfuerzoApertura/0.981).toLocaleString(); 
@@ -145,12 +207,20 @@ function calculaCotizacion() {
 	let momentoInerciaVastago = (Math.pow(diametroVastago,4)*pi)/64;
 	document.querySelector('.momento_incercia').value = momentoInerciaVastago.toLocaleString();
 
-  /*=((PI()*2*D46*D43)/0.6365)/POWER((D39*0.1),2)*/
 	let cargaPandeo = roundUp(((pi*2*young*momentoInerciaVastago)/0.6365)/((longPandeo*0.1)**2),2);
 	document.querySelector('.carga_pandeo').value = cargaPandeo.toLocaleString();
 
 	let cargaMaxServcio = roundUp((cargaPandeo/s),0);
 	document.querySelector('.carga_max_srv').value = cargaMaxServcio.toLocaleString();
+
+	if ( cargaMaxServcio > (esfuerzoCierre/0.981) ) {
+		document.querySelector('.validacion-vastago-al-pandeo').value = "OK";
+		document.querySelector('.validacion-vastago-al-pandeo').style.background = "green";
+		document.querySelector('.validacion-vastago-al-pandeo').style.color = "white";
+	}else{
+		document.querySelector('.validacion-vastago-al-pandeo').value = "NOK";
+		document.querySelector('.validacion-vastago-al-pandeo').style.background = "red";
+	}
 
 	
 	if((npo-nfc)*100>=((h*2)+15)){
@@ -162,7 +232,8 @@ function calculaCotizacion() {
 	let apoyosVastago = roundUp(medioValor,0);
 	document.querySelector('.apoyos_vastago').value = apoyosVastago.toLocaleString();
 
-  /*=IF(((D22-D23)*1000)>(D20*20)+300,"SI","NO")*/
+
+
   let marcoRepisa, marcoIntegral;
 	if ((npo-nfc)*1000>(h*20)+300){
 		marcoRepisa="SI";
@@ -174,7 +245,6 @@ function calculaCotizacion() {
 	document.querySelector('.marco_repisa').value = marcoRepisa;
 	document.querySelector('.marco_integral').value = marcoIntegral;
 
-  /*=IF(L16="NO","NA",((D20*20)+300))*/
   let alturaMarco;
   let marcoPedestal;
 	if(marcoIntegral==="NO"){
@@ -182,9 +252,7 @@ function calculaCotizacion() {
 	}else{
 		alturaMarco = (h*20)+300;
   }
-	document.querySelector('.altura_marco').value = alturaMarco;
-
-  /*=IF(L16="SI",0,IF(D16="CANAL",L17,ROUNDUP(D20*0.002*0.66,0)))*/
+	document.querySelector('.altura_marco').value = alturaMarco
 
 
 	if(marcoIntegral==="SI"){
@@ -221,11 +289,8 @@ function calculaCotizacion() {
 	document.querySelector('.modelo_actuador').value = "60BG48";
 	document.querySelector('.modelo_otros').value = "VTCPL 18-1.0-0.391";
 
-
 	let cantidadAnclajes = ((l*2)+(h*2))/10;
 	cAn = document.querySelector('.cantidad_anclajes').value = cantidadAnclajes;
-
-  
 
 	let cantidadSelloPosterior = l*0.01;
 	let cantidadCordonCompresion = h/100;
@@ -350,20 +415,16 @@ function calculaCotizacion() {
 	document.querySelector('.costo_indirectos').value = costoIndirectos.toLocaleString();
 
 	let costoVenta = Number(costoAdministrativo) + Number(flete) + Number(costoEmpaque) + Number(costoIndirectos);
-	console.log(costoAdministrativo, flete, costoEmpaque, costoIndirectos);
 	document.querySelector('.costo_venta').value =  costoVenta.toLocaleString();
   
 
 	let precioVenta  = costoVenta + costoFabricacion;
 	document.querySelector('.precio_venta').value = precioVenta.toLocaleString();
 
- // Calculo para saber que volante se va a usar
+    calculaPasoVastago(d, diametroVastago, pi, esfuerzoApertura, esfuerzoCierre, momentoInerciaVastago);
 
- // Calculo para peso promedio
 
 }
-
-
 
 
 function roundUp(num, precision) {
@@ -371,9 +432,10 @@ function roundUp(num, precision) {
   return Math.ceil(num * precision) / precision
 }
 
-function enableBoton() {
-	document.getElementById("partida").disabled = false;
-	document.getElementById("ver_memoria").disabled = false;
+function disableBoton() {
+	document.querySelector(".memoriaBtn").disabled = true;
+	document.querySelector(".volanteBtn").disabled = true;
+	document.querySelector(".actuadorBtn").disabled = true;
 }
 
  
