@@ -12,15 +12,15 @@
 	</head>
 	<body>
 		
-		<nav>
+		<header>
 
-			<h2>Soy el nav</h2>
+			<h2>Creaci&oacute;n de Compuerta Manual Delizante</h2>
 
-		</nav>
-		<section>
+		</header>
+		<div class="contenido">
 			<br>
 			
-			<article class="parametros">
+			<div class="parametros">
 				<h3><mark>Parametros de Calculo</mark></h3>
 
 				<div class="parametros-1">
@@ -57,9 +57,10 @@
 					</div>
 				</div>
 				
-			</article>
+			</div>
+
 			
-			<article class="parametros">
+			<div class="parametros">
 				<div class="parametros-1">
 					<div class="tooltip">
 						<label for="uso">Uso</label>
@@ -143,15 +144,9 @@
 						<span class="tooltiptext">Nivel fondo compuerta</span>
 					</div>
 				</div>
-				
-				<div class="parametros-ocultos">
-					<input type="text" class="young" value="2100000">
-					<input type="text" class="coef_seguridad" value="1.40">
-				</div>
+			</div>
 
-			</article>
-
-			<article class="otros-parametros">
+			<div class="otros-parametros">
 				<label for="fianza">Fianza</label>
 				<select name="fianza" id="fianza" class="fianza">
 					<option value="SI">SI</option>
@@ -167,19 +162,19 @@
 				<label for="factor_utilidad">Factor de Utilidad</label>
 				<input type="text" class="factor_utilidad" value="2.7">
 
-
 				<label class="label-list">Flete (USD)</label>
 				<input type="text" class="importe_flete" value="0">
-
-
 
 				<label class="label-list">Anticipo (%)</label>
 				<input type="text" class="anticipo" value="0">
 
-			</article>
-		</section>
+			</div>
+		</div>
+
 		<hr>
-		<section>
+
+
+		
 		<div class="botones">
 			<button class="calculaBtn" id="calcula" onClick="calculaCotizacion()" >Calcular</button>
 			<hr>
@@ -193,7 +188,13 @@
 				<button class="volanteBtn" disabled>Volante</button>
 			</a>
 		</div>
-	</section>
+	</div>
+	
+	<div class="parametros-ocultos">
+		<input type="text" class="young" value="2100000">
+		<input type="text" class="coef_seguridad" value="1.40">
+	</div>
+
 	
 	<h3>Precios y Materiales </h3>
 	<table class="table">
@@ -448,12 +449,12 @@
 		</tbody>
 	</table>
 
-
+	
 	<!-- Inicio datos vastago -->
 	<div id="openModalVolante" class="modalDialog">
 		<div>
 			<a href="#close" title="Close" class="close">X</a>
-			<h2>Mi modal Volante</h2>
+			<h2>Validaci&oacute;n Volante</h2>
 			
 		</div>
 	</div>
@@ -948,7 +949,7 @@
 
 <!-- FIN DE LA MEMORIA -->
 
-	    </section>
+	    </div>
 		
 		<footer>
 			<h4>soy el footer</footer>

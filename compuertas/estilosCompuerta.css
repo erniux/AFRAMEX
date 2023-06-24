@@ -1,6 +1,8 @@
 body {
-  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
   text-align: center;
+  font-family:Verdana, Geneva, Tahoma, sans-serif ;
+  color: rgb(75, 75, 75);
+  line-height: 1.8;
 }
 
 header {
@@ -13,6 +15,11 @@ nav {
   background-color: #cccccc;
   padding: 5px 15px;
 }
+
+.contenido{
+	
+	
+  }
 
 .ancho_util,
 .altura_util,
@@ -133,7 +140,7 @@ select {
 }
 
 .parametros-ocultos {
-  visibility: hidden;
+  display:  none;
 }
 
 .parametros-1 > input {
