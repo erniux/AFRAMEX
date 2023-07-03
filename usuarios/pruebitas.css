@@ -1,52 +1,69 @@
-html {
-    font-family: sans-serif;
-  }
-
   body {
     font-family:Verdana, Geneva, Tahoma, sans-serif ;
     background: #344a72;
     color: rgb(75, 75, 75);
+    line-height: 1.8;
   }
 
-  header {
-    background: purple;
-    height: 100px;
-  }
+  section {
+    display: flex;
+    flex-flow: row wrap ;
+    margin-top: 5%;
+    margin-left:10%
 
-  h1 {
-    text-align: center;
-    color: rgb(43, 43, 43);
-    line-height: 100px;
-    margin: 0;
-  }
+}
 
   article {
-    padding: 10px;
-    margin: 10px;
-
+    flex: 1 200px;
+    justify-content: center;
   }
 
-  /* Add your flexbox CSS below here */
-section {
-    display:flex;
-}
-
-a {
+  article:last-child {
     text-decoration: none;
+  }
+
+  a {
+    outline: none;
+  }
+
+  button {
+    display: block;
+    padding: 13px;
+    width: 100%;
+    height: 50px;
+    margin-top: 10px;
+    border-radius: 6px;
+    background: rgb(52, 130, 194);
+    color: white;
 }
 
+button:hover {
+    background: rgb(255, 158, 68);
+     
+}
 img {
-    padding: 100px 25px;
-    
+    width: 70%;
 }
 
-/* mis ids */
-.form-wrap {
+footer {
+    color:#fff;
+    text-align: center;
+}
+
+  .form-wrap {
     background: #fff;
     padding: 15px 25px;
     color: #333;
     border-radius: 8px;
-    margin-left:50px
+    /* margin-left:50px */
+}
+
+footer {
+    color: #000000;
+}
+
+footer a {
+    color:rgb(77, 133, 77);
 }
 
 .form-wrap h1, .form-wrap p {
@@ -54,7 +71,7 @@ img {
 }
 
 .form-group {
-    padding: 10px 10px;
+     padding: 10px 10px; 
 }
 
 .form-group input {
@@ -70,27 +87,10 @@ img {
     color: #667;
 }
 
-button {
-    display: block;
-    padding: 13px;
-    width: 100%;
-    height: 50px;
-    margin-top: 10px;
-    border-radius: 6px;
-    background: rgb(52, 130, 194);
-    color: white;
-}
 
-button:hover {
-    background: rgb(255, 158, 68);
-     
-}
 
-footer {
-    color:#fff;
-    text-align: center;
-}
 
-footer a {
-    color:rgb(77, 133, 77);
-}
+  
+  
+  
+   

@@ -94,8 +94,8 @@
 					<div class="tooltip">
 						<label for="sen_herm">S. Herm.</label>
 						<select name="sen_herm" id="sen_herm" class="sen_herm">
-							<option value="volvo">AB</option>
-							<option value="saab">BA</option>
+							<option value="AB">AB</option>
+							<option value="BA">BA</option>
 						</select>
 						<span class="tooltiptext">Sentido de Hermetismo</span>
 					</div>
@@ -170,11 +170,8 @@
 
 			</div>
 		</div>
-
 		<hr>
 
-
-		
 		<div class="botones">
 			<button class="calculaBtn" id="calcula" onClick="calculaCotizacion()" >Calcular</button>
 			<hr>
@@ -187,6 +184,7 @@
 			<a href="#openModalVolante">
 				<button class="volanteBtn" disabled>Volante</button>
 			</a>
+		<button class="crearCompuertaBtn" disabled>Crear Compuerta</button>
 		</div>
 	</div>
 	
@@ -450,18 +448,21 @@
 	</table>
 
 	
-	<!-- Inicio datos vastago -->
+	<!-- Inicio datos volantes para actuador -->
 	<div id="openModalVolante" class="modalDialog">
 		<div>
 			<a href="#close" title="Close" class="close">X</a>
 			<h2>Validaci&oacute;n Volante</h2>
+			<table clas="tabla-volante">
+
+			</table>
 			
 		</div>
 	</div>
 
-	<!-- Fin datos Vastago-->
+	<!-- Fin datos volantes para actuador-->
 
-	<!-- Inicio Volante para actuador -->
+	<!-- Inicio para actuador -->
 
 	<div id="openModalActuador" class="modalDialog">
 		<div>
@@ -484,11 +485,11 @@
 
 					<td>
 						<div class="tooltip">
-								<label for="usar-actuador" class="label-usar-actuador">Actuador</label>
-								<input type="text" class="usar-actuador" id="usar-actuador" disabled>
-								<span class="tooltiptext">Actuador a usar</span>
-							</div>
-						</td>
+							<label for="usar-actuador" class="label-usar-actuador">Actuador</label>
+							<input type="text" class="usar-actuador" id="usar-actuador" disabled>
+							<span class="tooltiptext">Actuador a usar</span>
+						</div>
+					</td>
 				</tr>
 				<tr>
 					<td>
@@ -523,7 +524,7 @@
 							<span class="tooltiptext">N<sup>o</sup>º vueltas manivela abrir/cerrar</span>
 						</div>
 					</td>
-					
+					</tr>
 					<tr>
 						<td>
 							<div class="tooltip">
@@ -537,13 +538,10 @@
 								<label for="lista-posibles-actuadores">Actuadores sugeridos</label>
 								<select name="actuadores" id="lista-posibles-actuadores" class="actuadores" onchange="reloadActuadores()"></select>
 								<span class="tooltiptext">Mecanismos de operaci&oacute;n sugerido(s)</span>
-								
 							</div>
-						<td>
-							
 						</td>
-						
 					</tr>
+					
 					<tr>
 						<td>
 							<div class="tooltip">
@@ -564,11 +562,70 @@
 							</div>
 						</td>
 					</tr>
-
-				</tr>
 			</table>
-
-
+				
+			<div>
+				<div class="tooltip">
+					<label for="capacidad_ka_Kg">Capacidad</label>
+					<input type="text" class="capacidad_ka_Kg" id="capacidad_ka_Kg" disabled>
+					<label>kg</label>
+					<span class="tooltiptext">Capacidad ka kg</span>
+				</div>
+				<div class="tooltip">
+					<label for="vastago_d_maxT_mm">Vastago d max@T</label>
+					<input type="text" class="vastago_d_maxT_mm" id="vastago_d_maxT_mm" disabled>
+					<label>mm</label>
+					<span class="tooltiptext">Vastago d max@T</span>
+				</div>
+				<div class="tooltip">
+					<label for="peso_w_Kg">Peso</label>
+					<input type="text" class="peso_w_Kg" id="peso_w_Kg" disabled>
+					<label>kg</label>
+					<span class="tooltiptext">PESO W</span>
+				</div>
+				<div class="tooltip">
+					<label for="rel_Radio">Rel Radio</label>
+					<input type="text" class="rel_Radio" id="rel_Radio" disabled>
+					<label></label>
+					<span class="tooltiptext">REL Radio</span>
+				</div>
+				<div class="tooltip">
+					<label for="max_torque_salida_Lb_Ft">Max Torque Salida</label>
+					<input type="text" class="max_torque_salida_Lb_Ft" id="max_torque_salida_Lb_Ft" disabled>
+					<label>Lb-Ft</label>
+					<span class="tooltiptext">Max Torque salida Lb-Ft</span>
+				</div>
+				<div class="tooltip">
+					<label for="ventaja_mecanica">Ventaja mec&aacute;nica</label>
+					<input type="text" class="ventaja_mecanica" id="ventaja_mecanica" disabled>
+					<label></label>
+					<span class="tooltiptext">Ventaja mec&aacute;nica</span>
+				</div>
+				<div class="tooltip">
+					<label for="altura_c_cm">Altura C</label>
+					<input type="text" class="altura_c_cm" id="altura_c_cm" disabled>
+					<label>cm</label>
+					<span class="tooltiptext">Altura C</span>
+				</div>
+				<div class="tooltip">
+					<label for="diam_eje_mm">Diam eje</label>
+					<input type="text" class="diam_eje_mm" id="diam_eje_mm" disabled>
+					<label>mm</label>
+					<span class="tooltiptext">Di&aacute;metro Eje</span>
+				</div>
+				<div class="tooltip">
+					<label for="brida_tipo_iso_ansi_MSS">Brida</label>
+					<input type="text" class="brida_tipo_iso_ansi_MSS" id="brida_tipo_iso_ansi_MSS" disabled>
+					<label></label>
+					<span class="tooltiptext">BRIDA tipo ISO ANSI MSS</span>
+				</div>
+				<div class="tooltip">
+					<label for="vastago_d_max_ka_mm">V&aacute;stago d max@Ka</label>
+					<input type="text" class="vastago_d_max_ka_mm" id="vastago_d_max_ka_mm" disabled>
+					<label>mm</label>
+					<span class="tooltiptext">V&aacute;stago d max@Ka</span>
+				</div>
+			</div>
 		</div>
 	</div>
 	<!-- Fin Volante para actuador -->
@@ -616,7 +673,6 @@
 							<span class="tooltiptext">Coeficiente de fricci&oacute;n de junta</span>
 							<label></label>
 						</div>
-
 
 					</td>
 					<td>

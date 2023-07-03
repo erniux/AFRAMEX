@@ -1,94 +1,93 @@
 body {
-    font-family:Verdana, Geneva, Tahoma, sans-serif ;
-    background: #344a72;
-    color: rgb(75, 75, 75);
-    line-height: 1.8;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background: #344a72;
+  color: rgb(75, 75, 75);
+  line-height: 1.8;
 }
 
-
-* {
-    margin: 0;
-    padding: 0;
+section {
+  display: flex;
+  flex-flow: row wrap;
+  margin-top: 5%;
+  margin-left: 10%;
+  align-items: center;
 }
 
-a {
-    text-decoration: none;
+article {
+  flex: 1 200px;
+  justify-content: center;
 }
 
-.container {
-    
-    flex-direction: column;
-    /*box-sizing: border-box;
-    padding: 20px;
-    width: 30%;
-    */
+article:last-child {
+  order: -1;
 }
 
-.container img {
-    width: 100%;
-    margin-top: -10px;
-    padding: 240px 15px;
-    
+footer {
+  color: #fff;
+  text-align: center;
 }
 
-
-.form-wrap {
-    background: #fff;
-    padding: 15px 25px;
-    color: #333;
-    border-radius: 8px;
-    margin-left:50px
-}
-
-.form-wrap h1, .form-wrap p {
-    text-align: center;
-}
-
-.form-group {
-    padding: 10px 10px;
-}
-
-.form-group input {
-    width: 100%;
-    padding: 13px 2px;
-    border-radius: 5px;
-    border-color: rgb(221, 217, 217);
-    font-size: 20px;
-}
-
-.form-group label {
-    display: block;
-    color: #667;
-}
-
-
-
-.imagen img {
-    width: 30%;
+footer a {
+  color: rgb(77, 133, 77);
 }
 
 button {
-    display: block;
-    padding: 13px;
-    width: 100%;
-    height: 50px;
-    margin-top: 10px;
-    border-radius: 6px;
-    background: rgb(77, 133, 77);
-    color: white;
-
+  display: block;
+  padding: 13px;
+  width: 100%;
+  height: 50px;
+  margin-top: 10px;
+  border-radius: 6px;
+  background: rgb(52, 130, 194);
+  color: white;
 }
 
 button:hover {
-    background: rgb(86, 180, 86);
-     
+  background: rgb(255, 190, 68);
+  color: black;
 }
 
-.footer {
-    color:#fff;
-    text-align: center;
+button a {
+  color: rgb(77, 133, 77);
+}
+img {
+  width: 70%;
 }
 
-.footer a {
-    color:rgb(77, 133, 77);
+a {
+    outline: none;
+    text-decoration: none;
+}
+
+.form-wrap {
+  margin-right: 80px;
+}
+
+.form-wrap {
+  background: #fff;
+  padding: 15px 25px;
+  color: #333;
+  border-radius: 8px;
+}
+
+.form-wrap h1,
+.form-wrap p {
+  text-align: center;
+}
+
+.form-group {
+  padding: 10px 10px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 13px 2px;
+  border-radius: 5px;
+  border-color: rgb(221, 217, 217);
+  font-size: 20px;
+}
+
+.form-group label {
+  display: block;
+  color: #667;
 }

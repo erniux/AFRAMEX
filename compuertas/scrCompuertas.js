@@ -41,7 +41,6 @@ async function calculaPasoVastago(d, diametroVastago, pi, esfuerzoApertura, esfu
 	let catalogo = await fetch("../catalogos/diametroVastago.json");
 	let datos = await catalogo.json();
 	let numero_vueltas_manivela = 0;
-	 
 	for (let propiedad of datos) {
 		if ( d === propiedad.diametro_vastago_mm) {
 			let paso = await propiedad.pitch_cm;
@@ -66,14 +65,14 @@ async function calculaPasoVastago(d, diametroVastago, pi, esfuerzoApertura, esfu
 				let mecanismos = await fetch("../catalogos/mecanismosOperacionDiamond.json");
 				let datos = await mecanismos.json();
 				for (let m of datos) {
-					if (m.VASTAGO_d_maxT_mm>=d 
+					if (m.vastago_d_max_ka_mm>=d 
 						&& m.vastago_d_max_ka_mm>=d 
 						&& m.capacidad_ka_Kg >0 
 						&& roundUp(m.max_torque_salida_Lb_Ft/0.737562,0) > parSubirCompuerta
 						&& m.max_torque_salida_Lb_Ft>parSubirCompuerta 
 						&& m.capacidad_ka_Kg>esfuerzoApertura/0.981 
 						&& d<m.vastago_d_max_ka_mm 
-						&& d<m.VASTAGO_d_maxT_mm) {
+						&& d<m.vastago_d_max_ka_mm) {
 							vastagos.push(m)
 						}
 					}
@@ -91,11 +90,8 @@ async function calculaPasoVastago(d, diametroVastago, pi, esfuerzoApertura, esfu
 
 function reloadActuadores() {
 	let vueltasVastago = document.querySelector('.vueltas-vastago').value;
-
 	let modeloActuador = document.getElementById('lista-posibles-actuadores').value;
-
 	calculaVueltasManivela(modeloActuador, vueltasVastago);
-	
 	
 }
 
@@ -115,6 +111,7 @@ function calculaCotizacion() {
 	document.querySelector(".memoriaBtn").disabled = false;
 	document.querySelector(".volanteBtn").disabled = false;
 	document.querySelector(".actuadorBtn").disabled = false;
+	document.querySelector(".crearCompuertaBtn").disabled = false;
 
 	let l = Number(document.querySelector(".ancho_util").value);
 	let h = Number(document.querySelector(".altura_util").value);
@@ -206,6 +203,8 @@ function calculaCotizacion() {
 
 	let momentoInerciaVastago = (Math.pow(diametroVastago,4)*pi)/64;
 	document.querySelector('.momento_incercia').value = momentoInerciaVastago.toLocaleString();
+
+	document.querySelector(".metro_columna_agua").value = ce*10;
 
 	let cargaPandeo = roundUp(((pi*2*young*momentoInerciaVastago)/0.6365)/((longPandeo*0.1)**2),2);
 	document.querySelector('.carga_pandeo').value = cargaPandeo.toLocaleString();
@@ -436,6 +435,7 @@ function disableBoton() {
 	document.querySelector(".memoriaBtn").disabled = true;
 	document.querySelector(".volanteBtn").disabled = true;
 	document.querySelector(".actuadorBtn").disabled = true;
+	document.querySelector(".crearCompuertaBtn").disabled = true;
 }
 
  
