@@ -102,6 +102,17 @@ async function calculaVueltasManivela(modelo, numero_vueltas_vastago) {
 		if (m.modelo === modelo) {
 			let vueltasManivela = m.rel_Radio*numero_vueltas_vastago;
 			document.querySelector('.vueltas-manivela').value = vueltasManivela;
+			document.querySelector('.vastago_d_maxT_mm').value = m.vastago_d_maxT_mm;
+			document.querySelector('.peso_w_Kg').value = m.peso_w_Kg;
+			document.querySelector('.rel_Radio').value = m.rel_Radio;
+			document.querySelector('.max_torque_salida_Lb_Ft').value = m.max_torque_salida_Lb_Ft;
+			document.querySelector('.ventaja_mecanica').value = m.ventaja_mecanica;
+			document.querySelector('.altura_c_cm').value = m.altura_c_cm;
+			document.querySelector('.altura_c_cm').value = m.altura_c_cm;
+			document.querySelector('.capacidad_ka_kg').value = m.capacidad_ka_Kg;
+			document.querySelector('.capacidad_ka_kg').value = m.capacidad_ka_Kg;
+			document.querySelector('.capacidad_ka_kg').value = m.capacidad_ka_Kg;
+			document.querySelector('.capacidad_ka_kg').value = m.capacidad_ka_Kg;
 		}
 	}
 }
@@ -219,6 +230,15 @@ function calculaCotizacion() {
 	}else{
 		document.querySelector('.validacion-vastago-al-pandeo').value = "NOK";
 		document.querySelector('.validacion-vastago-al-pandeo').style.background = "red";
+		document.querySelector('.carga_max_srv').style.background = "red";
+		document.querySelector('.fuerza_empuje').style.background = "red";
+		document.querySelector('.carga_max_srv').style.color = "white";
+		document.querySelector('.fuerza_empuje').style.color = "white";
+		document.querySelector('.validacion-vastago-al-pandeo').style.color = "white";
+
+		document.querySelector(".volanteBtn").disabled = true;
+		document.querySelector(".actuadorBtn").disabled = true;
+		document.querySelector(".crearCompuertaBtn").disabled = true;
 	}
 
 	
