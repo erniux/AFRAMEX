@@ -63,7 +63,7 @@ nav {
 .factor-compuerta,
 .paso-rosca-vastago,
 .tga-vastago,
-.fm-vastago {
+.fm-vastago, .capacidad_ka_Kg {
   background-color: #fffacd;
   text-align: center;
   width: 85px;
@@ -465,6 +465,7 @@ a {
   padding: 0.5rem 3rem;
   font-size: 1rem;
 }
+
 
 .label-usar-actuador {
 	margin-left: 52px;

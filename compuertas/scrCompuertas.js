@@ -102,17 +102,16 @@ async function calculaVueltasManivela(modelo, numero_vueltas_vastago) {
 		if (m.modelo === modelo) {
 			let vueltasManivela = m.rel_Radio*numero_vueltas_vastago;
 			document.querySelector('.vueltas-manivela').value = vueltasManivela;
+			document.querySelector('.capacidad_ka_Kg').value = m.capacidad_ka_Kg;
 			document.querySelector('.vastago_d_maxT_mm').value = m.vastago_d_maxT_mm;
 			document.querySelector('.peso_w_Kg').value = m.peso_w_Kg;
 			document.querySelector('.rel_Radio').value = m.rel_Radio;
 			document.querySelector('.max_torque_salida_Lb_Ft').value = m.max_torque_salida_Lb_Ft;
 			document.querySelector('.ventaja_mecanica').value = m.ventaja_mecanica;
 			document.querySelector('.altura_c_cm').value = m.altura_c_cm;
-			document.querySelector('.altura_c_cm').value = m.altura_c_cm;
-			document.querySelector('.capacidad_ka_kg').value = m.capacidad_ka_Kg;
-			document.querySelector('.capacidad_ka_kg').value = m.capacidad_ka_Kg;
-			document.querySelector('.capacidad_ka_kg').value = m.capacidad_ka_Kg;
-			document.querySelector('.capacidad_ka_kg').value = m.capacidad_ka_Kg;
+			document.querySelector('.diam_eje_mm').value = m.diam_eje_mm;
+			document.querySelector('.brida_tipo_iso_ansi_MSS').value = m.brida_tipo_iso_ansi_MSS;
+			document.querySelector('.vastago_d_max_ka_mm').value = m.vastago_d_max_ka_mm;
 		}
 	}
 }
