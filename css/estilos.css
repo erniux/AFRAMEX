@@ -1,0 +1,207 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Main Styling */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.7em;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+h1, h2, h3 {
+    padding-bottom: 20px;
+}
+
+p {
+    margin: 10px 0;
+}
+
+/* utility classes */
+.container {
+    margin:auto;
+    max-width: 1100px;
+    overflow: auto;
+    padding: 0 20px;
+}
+
+/* Navbar */
+.navbar {
+    background: #004B9A;
+    color: #fff;   
+    width: 100%;
+    
+}
+
+.navbar a {
+    color: #fff;
+}
+
+.navbar h1 {
+    float: left;
+    padding: 20px;
+}
+
+.navbar ul {
+    list-style: none;
+    float: right;
+}
+
+.navbar ul li {
+    float: left;
+}
+
+.navbar ul li a {
+    display: block;
+    padding: 20px;
+    text-align: center;
+}
+
+.navbar ul li a:hover, 
+.navbar ul li a.current  {
+    background: #1760AC;
+    color: #F4C116;
+}
+
+/* showcase-content */
+.showcase {
+    background: no-repeat center/40% url('/imagenes/aframexlogo.png');
+    height: 25em;
+}
+
+.showcase-deslizante {
+    background: no-repeat center/36% url('/imagenes/volantedirecto.jpg');
+    height: 13em;
+}
+
+.showcase-rodante {
+    background: no-repeat center/65% url('/imagenes/rodantes.jpg');
+    height: 13em;
+}
+
+.showcase-radiales {
+    background: no-repeat center/65% url('/imagenes/radiales.jpg');
+    height: 13em;
+}
+
+.showcase-hidrodinamicas {
+    background: no-repeat center/90% url('/imagenes/hidrodinamicas.jpg');
+    height: 10em;
+}
+
+.showcase-miller {
+    background: no-repeat center/13% url('/imagenes/miller.jpg');
+    height: 10em;
+}
+
+.showcase-charnela {
+    background: no-repeat center/57% url('/imagenes/charnela.jpg');
+    height: 10em;
+}
+
+.showcase-vertedero {
+    background: no-repeat center/30% url('/imagenes/vertedero.jpg');
+    height: 10em;
+}
+
+.showcase-ataguia-mural {
+    background: no-repeat center/30% url('/imagenes/ataguiamural.jpg');
+    height: 10em;
+}
+
+.showcase-ataguia-canal {
+    background: no-repeat center/30% url('/imagenes/ataguiacanal.jpg');
+    height: 10em;
+}
+
+.btn-compuertas {
+    background-color: #389a00;
+    color: white;
+    border-radius: 10%;
+    padding: 10px 10px;
+    border: #ccc solid 2px;
+} 
+
+.btn-compuertas:hover {
+    background: #fff;
+    color:#389a00;
+    cursor: pointer;
+}
+
+
+/*badgets */
+
+.badget-vendidas {
+    background: #389a00;
+    color:white;
+    font-size: small;
+    border-radius: 200px;
+    width: 2em;
+    text-align: center; 
+    margin: 0 0 5px;
+}
+
+.badget-pendientes {
+    background: #004B9A;
+    color:white;
+    font-size: small;
+    border-radius: 200px;
+    width: 2em;
+    text-align: center; 
+    margin: 0 0 5px;
+    
+}
+
+.badget-creadas {
+    background: #F4C116;
+    color:white;
+    font-size: small;
+    border-radius: 200px;
+    width: 2em;
+    text-align: center; 
+    margin: 0 0 5px;
+
+}
+
+.badget-canceladas {
+    background: red;
+    color:white;
+    font-size: small;
+    border-radius: 200px;
+    width: 2em;
+    text-align: center; 
+    margin: 0 0 5px;
+}
+
+
+/* features */
+.box {
+    float: left;
+    width: 33.3%;
+    padding: 50px;
+    text-align: center;
+}
+
+/* footer */
+.main-footer {
+    text-align: center;
+    color: white;
+    background: #004B9A;
+    padding: 20px;
+
+}
+
+.clr {
+    clear: both;
+}
+
+
+

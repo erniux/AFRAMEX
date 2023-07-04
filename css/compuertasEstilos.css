@@ -1,0 +1,278 @@
+*{
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.flex-container {
+    display: flex;
+
+}
+
+.parametros {
+    background: #f4f4f4;
+    border: #ccc solid 2px;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+
+.ancho_util,
+.altura_util,
+.carga_maxima,
+.niv_piso_oper,
+.niv_fondo_comp,
+.peso_promedio,
+.espacio_entre_apoyos {
+  background-color: #a0e7e5;
+  text-align: center;
+  width: 85px;
+  height: 35px;
+  border-radius: 7%;
+}
+
+.perimetro_sello,
+.peso_tablero_compuerta,
+.coeficiente_friccion,
+.coeficiente_friccion_junta,
+.superficio_junta_presion,
+.diametro_vastago,
+.coef_seguridad,
+.apoyos_vastago,
+.altura_pedestal,
+.altura_marco,
+.marco_pedestal,
+.marco_integral,
+.marco_repisa,
+.longitud_pandeo,
+.carga_pandeo,
+.carga_max_srv,
+.fuerza_empuje,
+.momento_incercia,
+.young,
+.metro_columna_agua,
+.par-subir-compuerta,
+.usar-actuador,
+.par-bajar-compuerta,
+.vueltas-vastago,
+.vueltas-manivela,
+.factor-compuerta,
+.paso-rosca-vastago,
+.tga-vastago,
+.fm-vastago, .capacidad_ka_Kg {
+  background-color: #fffacd;
+  text-align: center;
+  width: 85px;
+  height: 35px;
+  border-radius: 7%;
+}
+
+.esfuerzo_apertura,
+.esfuerzo_cierre,
+.empuje_hidraulico_sobre_compuerta,
+.esfuerzo_apertura_kgf,
+.esfuerzo_cierre_kgf,
+.empuje_hidraulico_sobre_compuerta_kgf,
+.esfuerzo_apertura_lbf,
+.esfuerzo_cierre_lbf,
+.empuje_hidraulico_sobre_compuerta_lbf,
+.peso_tablero_compuerta_round,
+.peso_marco,
+.peso_vastago,
+.peso_pedestal,
+.peso_repisa,
+.peso_sop_vastago,
+.peso_actuador,
+.peso_volante,
+.peso_accesorios,
+.peso_total {
+  background-color: #ff8c00;
+  text-align: center;
+  width: 85px;
+  border-radius: 7%;
+  height: 35px;
+}
+
+.validacion-vastago-al-pandeo {
+  background-color: #ffffff;
+  text-align: center;
+  width: 85px;
+  border-radius: 7%;
+  height: 35px;
+  margin-left: 25px;
+}
+
+.actuador_marca,
+.actuador_modelo {
+  background-color: #ff8c00;
+  text-align: center;
+  width: 200px;
+}
+
+.importe_flete,
+.fianza,
+.transporte,
+.anticipo,
+.factor_utilidad {
+  background-color: #a0e7e5;
+  text-align: center;
+  width: 85px;
+  height: 35px;
+  border-radius: 7%;
+}
+
+select {
+    word-wrap: normal;
+    background-color: #fad3cf;
+    width: 125px;
+    height: 37px;
+    margin-left: 5.5px;
+  }
+
+.parametros-ocultos {
+  display:  none;
+}
+
+.parametros .tooltip > label {
+    background-color: #cdcdcd;
+    color: black;
+    margin-right: -9px;
+    border-bottom-left-radius: 5px;
+    padding: 8px 13px 10px;
+    border-top-left-radius: 5px;
+  }
+
+  .tooltip {
+    position: relative;
+    display: inline-block;
+  }
+
+  .orden {
+    display: flex;
+  }
+
+
+
+  
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .calculaBtn {
+    background: #1a73e8;
+    color: white;
+    border-radius: 4px;
+    height: 50px;
+    width: 100;
+    font-size: 22px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 1);
+  }
+  
+  .calculaBtn:hover {
+    background: white;
+    color: #1a73e8;
+  }
+
+  .botones > button {
+    border-radius: 4px;
+    height: 50px;
+    width: fit-content;
+    font-size: 18px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 1);
+  }
+  
+  .actuadorBtn {
+    background: #e5e81a;
+    color: white;
+    border-radius: 4px;
+    height: 50px;
+    width: fit-content;
+    font-size: 18px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 1);
+  }
+  
+  .actuadorBtn:hover {
+    background: white;
+    color: #e5e81a;
+  }
+  
+  .memoriaBtn {
+    background: #c61ae8;
+    color: white;
+    border-radius: 4px;
+    height: 50px;
+    width: fit-content;
+    font-size: 18px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 1);
+  }
+  
+  .memoriaBtn:hover {
+    color: #c61ae8;
+    background: white;
+  }
+  
+  .memoriaBtn:disabled,
+  .volanteBtn:disabled,
+  .actuadorBtn:disabled,
+  .crearCompuertaBtn:disabled {
+    background: #ccc;
+  }
+  
+  .volanteBtn {
+    background: #1ae824;
+    color: white;
+    border-radius: 4px;
+    height: 50px;
+    width: fit-content;
+    font-size: 18px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 1);
+  }
+  
+  .volanteBtn:hover {
+    color: #1ae824;
+    background: white;
+  }
+  
+  .memoriaBtn:active,
+  .volanteBtn:active,
+  .actuadorBtn:active,
+  .crearCompuertaBtn:active {
+    background: #000000;
+  }

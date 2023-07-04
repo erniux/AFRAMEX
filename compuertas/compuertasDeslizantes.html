@@ -1,0 +1,1015 @@
+<!-- CON alt+e puedes generar etiquetas y encapsular algun bloque-->
+<html>
+	<head>
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!--	<link rel = "stylesheet" href="estilosCompuerta.css"> -->
+		<link rel="stylesheet" href="../css/compuertasEstilos.css">
+		<link rel="stylesheet" href="../css/estilos.css">
+		<script src="scrCompuertas.js"></script>
+
+		<title>Crear Compuertas</title>
+
+	</head>
+	<body>
+		
+		<header>
+			<nav class="navbar">
+			  <div class="container">
+				<h1 class="logo"><a href="../index.html">Aframex</a></h1>
+				<ul>
+				  <li><a href="../index.html">Inicio</a></li>
+				  <li><a class="current" href="compuertas.html">Compuertas</a></li>
+				  <li><a href="">Rotofiltros</a></li>
+				  <li><a href="">Cotizaciones</a></li>
+				</ul>
+			  </div>
+			</nav>
+		</header>
+
+		<div class="flex-container">
+			<div class="parametros">
+				<h3><mark>Par&aacute;metros T&eacute;cnicos de Calculo</mark></h3>
+				
+					<div class="tooltip">
+						<label for="tipo">Tipo</label>
+						<select name="tipo" id="tipo" class="tipo">
+							<option value="manual">MANUAL</option>
+							<option value="electrica">ELECTRICA</option>
+						</select>
+						<span class="tooltiptext">Tipo de Actuador para Compuerta</span>
+					</div>
+						
+					<div class="tooltip">
+						<label for="ancho_util">L</label>
+						<input type="text" class="ancho_util" id="ancho_util" value="145" onchange="calculaPesoPromedio()">
+						<span class="tooltiptext">Ancho &Uacute;til</span>
+						<label>cm</label>
+					</div>
+			
+					<div class="tooltip">
+						<label for="altura_util">H</label>
+						<input type="text" class="altura_util" id="altura_util" value="460">
+						<span class="tooltiptext">Altura &Uacute;til</span>
+						<label>cm</label>
+					</div>
+					
+					<div class="tooltip">
+						<label for="carga-maxima">Ce</label>
+						<input type="text" class="carga_maxima" id="carga_maxima" value="0.4250" onchange="calculaPesoPromedio()">
+						<span class="tooltiptext">Carga M&aacute;xima de Agua</span>
+						<label >bar</label>
+					</div>
+					
+					<div class="tooltip">
+						<label for="peso-promedio">Pp</label>
+						<input type="text" class="peso_promedio" id="peso_promedio" value="67.92">
+						<label>daN</label>
+						<span class="tooltiptext">Peso Promedio por m<sup>2</sup> de agua</span>
+					</div>
+					
+					<div class="tooltip">
+						<label for="uso">Uso</label>
+						<select name="uso" id="uso" class="uso">
+							<option value="bloqueo">BLOQUEO</option>
+							<option value="regulacion">REGULACION</option>
+						</select>
+						<span class="tooltiptext">Uso que se le dar&aacute; a la compuerta</span>
+					</div>
+						
+					<div class="tooltip">
+						<label for="espacio_entre_apoyos">La</label>
+						<input type="text" class="espacio_entre_apoyos" id="espacio_entre_apoyos" value="500">
+						<label>cm</label>
+						<span class="tooltiptext">Espaciamiento entre apoyos</span>
+					</div>
+
+					<div class="tooltip">
+						<label for="montaje" >Montaje</label>
+						<select name="montaje" id="montaje" class="montaje">
+							<option value="mural">MURAL</option>
+							<option value="canal">CANAL</option>
+						</select>
+						<span class="tooltiptext">Montaje de la compuerta</span>
+					</div>
+						
+					<div class="tooltip">
+						<label for="sen_herm">S. Herm.</label>
+						<select name="sen_herm" id="sen_herm" class="sen_herm">
+							<option value="AB">AB</option>
+							<option value="BA">BA</option>
+						</select>
+						<span class="tooltiptext">Sentido de Hermetismo</span>
+					</div>
+
+					<div class="tooltip">
+						<label for="diam_vastago">Diám. Vást.</label>
+						<select name="diam_vastago" id="diam_vastago" class="diam_vastago" onchange="disableBoton()">
+							<option value="19.05">19.05</option>
+							<option value="21.77">21.77</option>
+							<option value="25.4">25.4</option>
+							<option value="28.6">28.6</option>
+							<option value="317">31.7</option>
+							<option value="34.9">34.9</option>
+							<option value="38.1">38.1</option>
+							<option value="44.45">44.45</option>
+							<option value="50.8">50.8</option>
+							<option value="57.1">57.1</option>
+							<option value="63.5">63.5</option>
+							<option value="69.8">69.8</option>
+							<option value="76.2">76.2</option>
+							<option value="88.9">188.9</option>
+							<option value="101.6" selected>101.6</option>
+							<option value="114.3">114.3</option>
+							<option value="127">127</option>
+						</select>
+						<span class="tooltiptext">Di&aacute;metro del v&aacute;stago</span>
+					</div>
+						
+					<div class="tooltip">
+						<label for="niv_piso_oper">NPO</label>
+						<input type="text" class="niv_piso_oper" or="niv_piso_oper" value="16.11">
+						<label>m</label>
+						<span class="tooltiptext">Nivel piso operaci&oacute;n</span>
+					</div>
+						
+					<div class="tooltip">
+						<label for="niv_fondo_comp">NFC</label>
+						<input type="text" class="niv_fondo_comp" id="niv_fondo_comp" value="0">
+						<label>m</label>
+						<span class="tooltiptext">Nivel fondo compuerta</span>
+					</div>
+			</div>
+			
+			<div class="parametros">
+				<h3><mark>Par&aacute;metros Financieros para Cotizar</mark></h3>
+				<label for="fianza">Fianza</label>
+				<select name="fianza" id="fianza" class="fianza">
+					<option value="SI">SI</option>
+					<option value="NO">NO</option>
+				</select>
+
+				<label for="transporte">Transporte</label>
+				<select name="transporte" id="transporte" class="transporte">
+					<option value="SI">SI</option>
+					<option value="NO">NO</option>
+				</select>
+
+				<label for="factor_utilidad">Factor de Utilidad</label>
+				<input type="text" class="factor_utilidad" value="2.7">
+
+				<label class="label-list">Flete (USD)</label>
+				<input type="text" class="importe_flete" value="0">
+
+				<label class="label-list">Anticipo (%)</label>
+				<input type="text" class="anticipo" value="0">
+			</div>
+			
+			<div class="parametros">
+				<button class="calculaBtn" id="calcula" onClick="calculaCotizacion()" >Calcular</button>
+				<hr>
+				<a href="#openModalMemoria">
+					<button class="memoriaBtn" disabled>Memoria de Cáclulo</button>
+				</a>
+				<a href="#openModalActuador">
+					<button class="actuadorBtn" disabled>Actuador</button>
+				</a>
+				<a href="#openModalVolante">
+					<button class="volanteBtn" disabled>Volante</button>
+				</a>
+				<button class="crearCompuertaBtn" disabled>Crear Compuerta</button>
+			</div>
+
+			<div class="parametros">
+				<h3>Item 4</h3>
+				<div class="parametros-ocultos">
+					<input type="text" class="young" value="2100000">
+					<input type="text" class="coef_seguridad" value="1.40">
+				</div>
+			</div>
+		</div>
+	
+	
+
+	
+	<h3>Precios y Materiales </h3>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Concepto</th>
+				<th>Modelo</th>
+				<th>Cantidad</th>
+				<th>Unidad</th>
+				<th>Material</th>
+				<th>Precio Unitario</th>
+				<th>Multiplicador</th>
+				<th>Subtotal</th>
+			</tr>
+		</thead>	
+		<tbody>
+			<tr>
+				<td>Tablero de la compuerta</td>
+				<td><input type="text" class="cotiza_modelo modelo_tablero_compuerta" disabled></td>
+				<td><input type="text" class="cotiza cantidad_tablero_compuerta" disabled></td>	
+				<td>Kg</td>
+				<td><input type="text" class="cotiza material_tablero_compuerta"  disabled></td>
+				<td><input type="text" class="cotiza precio_unitario_tablero_compuerta" disabled></td>
+				<td><input type="number" class="cotiza mo_tablero_compuerta"></td>
+				<td><input type="text" class="cotiza subtotal_tablero_compuerta" disabled></td>
+			</tr>
+			<tr>
+				<td>Marco</td>
+				<td><input type="text" class="cotiza_modelo modelo_marco"  disabled></td>
+				<td><input type="text" class="cotiza cantidad_marco" disabled></td>	
+				<td>Kg</td>
+				<td><input type="text" class="cotiza material_marco"  disabled></td>
+				<td><input type="text" class="cotiza precio_unitario_marco" disabled></td>
+				<td><input type="number" class="cotiza mo_marco"></td>
+				<td><input type="text" class="cotiza subtotal_marco" disabled></td>
+			</tr>
+			<tr>
+				<td>Pedestal mecanismo</td>
+				<td><input type="text" class="cotiza_modelo modelo_pedestal"  disabled></td>
+				<td><input type="text" class="cotiza cantidad_pedestal" disabled></td>	
+				<td>Kg</td>
+				<td><input type="text" class="cotiza material_pedestal"  disabled></td>
+				<td><input type="text" class="cotiza precio_unitario_pedestal" disabled></td>
+				<td><input type="number" class="cotiza mo_pedestal"></td>
+				<td><input type="text" class="cotiza subtotal_pedestal" disabled></td>
+			</tr>
+			<tr>
+				<td>Actuador</td>
+				<td><input type="text" class="cotiza_modelo modelo_actuador"  disabled></td>
+				<td><input type="text" class="cotiza cantidad_actuador" disabled></td>	
+				<td>Pza</td>
+				<td><input type="text" class="cotiza material_actuador"  disabled></td>
+				<td><input type="text" class="cotiza precio_unitario_actuador" disabled></td>
+				<td><input type="number" class="cotiza mo_actuador"></td>
+				<td><input type="text" class="cotiza subtotal_actuador" disabled></td>
+			</tr>
+			<tr>
+				<td>Anclajes</td>
+				<td><input type="text" class="cotiza_modelo modelo_anclajes"  disabled></td>
+				<td><input type="text" class="cotiza cantidad_anclajes" disabled></td>	
+				<td>Kg</td>
+				<td><input type="text" class="cotiza material_anclajes"  disabled></td>
+				<td><input type="text" class="cotiza precio_unitario_anclajes" disabled></td>
+				<td><input type="number" class="cotiza mo_anclajes"></td>
+				<td><input type="text" class="cotiza subtotal_anclajes" disabled></td>
+			</tr>
+			<tr>
+				<td>Gel Anclaje(1 Cartucho 600ml)</td>
+				<td><input type="text" class="cotiza_modelo modelo_gel_anclaje"  disabled></td>
+				<td><input type="text" class="cotiza cantidad_gel_anclaje" disabled></td>	
+				<td>Pza</td>
+				<td><input type="text" class="cotiza material_gel_anclaje"  disabled></td>
+				<td><input type="text" class="cotiza precio_unitario_gel_anclaje" disabled></td>
+				<td><input type="number" class="cotiza mo_gel_anclaje"></td>
+				<td><input type="text" class="cotiza subtotal_gel_anclaje" disabled></td>
+			</tr>
+			<tr>
+				<td>Adhesivo DP-810</td>
+				<td><input type="text" class="cotiza_modelo modelo_adhesivo"  disabled></td>
+				<td><input type="text" class="cotiza cantidad_adhesivo" disabled></td>	
+				<td>Pza</td>
+				<td><input type="text" class="cotiza material_adhesivo"  disabled></td>
+				<td><input type="text" class="cotiza precio_unitario_adhesivo" disabled></td>
+				<td><input type="number" class="cotiza mo_adhesivo"></td>
+				<td><input type="text" class="cotiza subtotal_adhesivo" disabled></td>
+			</tr>
+			<tr>
+				<td>Recubrimientos</td>
+				<td><input type="text" class="cotiza_modelo modelo_recubrimientos"  disabled></td>
+				<td><input type="text" class="cotiza cantidad_recubrimientos" disabled></td>	
+				<td>Lote</td>
+				<td><input type="text" class="cotiza material_recubrimientos"  disabled></td>
+				<td><input type="text" class="cotiza precio_unitario_recubrimientos" disabled></td>
+				<td><input type="number" class="cotiza mo_recubrimientos"></td>
+				<td><input type="text" class="cotiza subtotal_recubrimientos" disabled></td>
+			</tr>
+			<tr>
+				<td>Guias</td>
+				<td><input type="text" class="cotiza_modelo modelo_guias"  disabled></td>
+				<td><input type="text" class="cotiza cantidad_guias" disabled></td>	
+				<td>Kg</td>
+				<td><input type="text" class="cotiza material_guias"  disabled></td>
+				<td><input type="text" class="cotiza precio_unitario_guias" disabled></td>
+				<td><input type="number" class="cotiza mo_guias"></td>
+				<td><input type="text" class="cotiza subtotal_guias" disabled></td>
+			</tr>
+			<tr>
+				<td>Sello Posterior</td>
+				<td><input type="text" class="cotiza_modelo modelo_sello_posterior"  disabled></td>
+				<td><input type="text" class="cotiza cantidad_sello_posterior" disabled></td>	
+				<td>m</td>
+				<td><input type="text" class="cotiza material_sello_posterior"  disabled></td>
+				<td><input type="text" class="cotiza precio_unitario_sello_posterior" disabled></td>
+				<td><input type="number" class="cotiza mo_sello_posterior"></td>
+				<td><input type="text" class="cotiza subtotal_sello_posterior" disabled></td>
+			</tr>
+			<tr>
+				<td>Cordon compresión</td>
+				<td><input type="text" class="cotiza_modelo modelo_cordon_compresion"  disabled></td>
+				<td><input type="text" class="cotiza cantidad_cordon_compresion" disabled></td>	
+				<td>m</td>
+				<td><input type="text" class="cotiza material_cordon_compresion"  disabled></td>
+				<td><input type="text" class="cotiza precio_unitario_cordon_compresion" disabled></td>
+				<td><input type="number" class="cotiza mo_cordon_compresion"></td>
+				<td><input type="text" class="cotiza subtotal_cordon_compresion" disabled></td>
+			</tr>
+			<tr>
+				<td>Sello Fondo</td>
+				<td><input type="text" class="cotiza_modelo modelo_sello_fondo"  disabled></td>
+				<td><input type="text" class="cotiza cantidad_sello_fondo" disabled></td>	
+				<td>m</td>
+				<td><input type="text" class="cotiza material_sello_fondo"  disabled></td>
+				<td><input type="text" class="cotiza precio_unitario_sello_fondo" disabled></td>
+				<td><input type="number" class="cotiza mo_sello_fondo"></td>
+				<td><input type="text" class="cotiza subtotal_sello_fondo" disabled></td>
+			</tr>
+			<tr>
+				<td>Vastago roscado</td>
+				<td><input type="text" class="cotiza_modelo modelo_vastago_roscado"  disabled></td>
+				<td><input type="text" class="cotiza cantidad_vastago_roscado" disabled></td>	
+				<td>Kg</td>
+				<td><input type="text" class="cotiza material_vastago_roscado"  disabled></td>
+				<td><input type="text" class="cotiza precio_unitario_vastago_roscado" disabled></td>
+				<td><input type="number" class="cotiza mo_vastago_roscado"></td>
+				<td><input type="text" class="cotiza subtotal_vastago_roscado" disabled></td>
+			</tr>
+			<tr>
+				<td>Apoyos</td>
+				<td><input type="text" class="cotiza_modelo modelo_apoyos"  disabled></td>
+				<td><input type="text" class="cotiza cantidad_apoyos" disabled></td>	
+				<td>Pza</td>
+				<td><input type="text" class="cotiza material_apoyos"  disabled></td>
+				<td><input type="text" class="cotiza precio_unitario_apoyos" disabled></td>
+				<td><input type="number" class="cotiza mo_apoyos"></td>
+				<td><input type="text" class="cotiza subtotal_apoyos" disabled></td>
+			</tr>
+			<tr>
+				<td>Tablero Control eléctrico</td>
+				<td><input type="text" class="cotiza_modelo modelo_tablero_control"  disabled></td>
+				<td><input type="text" class="cotiza cantidad_tablero_control" disabled></td>	
+				<td>Pza</td>
+				<td><input type="text" class="cotiza material_tablero_control"  disabled></td>
+				<td><input type="text" class="cotiza precio_unitario_tablero_control" disabled></td>
+				<td><input type="number" class="cotiza mo_tablero_control"></td>
+				<td><input type="text" class="cotiza subtotal_tablero_control" disabled></td>
+			</tr>
+			<tr>
+				<td>Otros</td>
+				<td><input type="text" class="cotiza_modelo modelo_otros"  disabled></td>
+				<td><input type="text" class="cotiza cantidad_otros" disabled></td>	
+				<td>Kg</td>
+				<td><input type="text" class="cotiza material_otros"  disabled></td>
+				<td><input type="text" class="cotiza precio_unitario_otros" disabled></td>
+				<td><input type="number" class="cotiza mo_otros"></td>
+				<td><input type="text" class="cotiza subtotal_otros" disabled></td>
+			</tr>
+			<tr>
+				<td>Tornilleria</td>
+				<td><input type="text" class="cotiza_modelo modelo_tornillos"  disabled></td>
+				<td><input type="text" class="cotiza cantidad_tornillos" disabled></td>	
+				<td>Pza</td>
+				<td><input type="text" class="cotiza material_tornillos"  disabled></td>
+				<td><input type="text" class="cotiza precio_unitario_tornillos" disabled></td>
+				<td><input type="number" class="cotiza mo_tornillos"></td>
+				<td><input type="text" class="cotiza subtotal_tornillos" disabled></td>
+			</tr>
+
+			<tr>
+				<td>Costo fabricación</td>
+				<td></td>
+				<td></td>	
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td><input type="text" class="cotiza costo_fabricacion" disabled></td>
+			</tr>
+
+			<tr>
+				<td>Costo de Venta</td>
+				<td>Fianzas</td>
+				<td></td>	
+				<td></td>
+				<td></td>
+				<td></td>
+				<td><input type="text" class="cotiza costo_fianzas" disabled></td>
+				<td></td>
+			</tr>
+
+			<tr>
+				<td></td>
+				<td>Transporte</td>
+				<td></td>	
+				<td></td>
+				<td></td>
+				<td></td>
+				<td><input type="text" class="cotiza costo_transporte" disabled></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>Empaque</td>
+				<td></td>	
+				<td></td>
+				<td></td>
+				<td></td>
+				<td><input type="text" class="cotiza costo_empaque" disabled></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>Indirectos</td>
+				<td></td>	
+				<td></td>
+				<td></td>
+				<td><input type="number" class="cotiza porcentaje_indirectos" value =0.15></td>
+				<td><input type="text" class="cotiza costo_indirectos" disabled></td>
+				<td><input type="text" class="cotiza costo_venta" disabled></td>
+
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>Precio de venta</td>
+				<td></td>	
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td><input type="text" class="cotiza precio_venta" disabled></td>
+			</tr>
+		</tbody>
+	</table>
+
+	
+	<!-- Inicio datos volantes para actuador -->
+	<div id="openModalVolante" class="modalDialog">
+		<div>
+			<a href="#close" title="Close" class="close">X</a>
+			<h2>Validaci&oacute;n Volante</h2>
+			<table clas="tabla-volante">
+
+			</table>
+			
+		</div>
+	</div>
+
+	<!-- Fin datos volantes para actuador-->
+
+	<!-- Inicio para actuador -->
+
+	<div id="openModalActuador" class="modalDialog">
+		<div>
+			<a href="#close" title="Close" class="close">X</a>
+			<h2>Validaci&oacute;n Actuador</h2>	
+			<table class="tabla-actuador">
+				<tr>
+					<th>Par de Maniobra</th>
+					<th>Actuador</th>
+				</tr>
+				<tr>
+					<td>
+					<div class="tooltip">
+							<label for="par-subir-compuerta">CO</label>
+							<input type="text" class="par-subir-compuerta" id="par-subir-compuerta" disabled>
+							<label>N-m</label>
+							<span class="tooltiptext">Par subir compuerta</span>
+						</div>
+					</td>
+
+					<td>
+						<div class="tooltip">
+							<label for="usar-actuador" class="label-usar-actuador">Actuador</label>
+							<input type="text" class="usar-actuador" id="usar-actuador" disabled>
+							<span class="tooltiptext">Actuador a usar</span>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="tooltip">
+							<label for="par-bajar-compuerta">CF</label>
+							<input type="text" class="par-bajar-compuerta" id="par-bajar-compuerta" disabled>
+							<label>N-m</label>
+							<span class="tooltiptext">Par bajar compuerta</span>
+						</div>
+					</td>
+
+					<td>
+						<div class="tooltip">
+							<label for="vueltas-vastago" class="label-vueltas-vastago">Vueltas v&aacute;stago</label>
+							<input type="text" class="vueltas-vastago" id="vueltas-vastago" disabled>
+							<span class="tooltiptext">N<sup>o</sup>º vueltas v&aacute;stago abrir/cerrar</span>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="tooltip">
+							<label for="factor-compuerta" class="label-factor-compuerta">f</label>
+							<input type="text" class="factor-compuerta" id="factor-compuerta" onchange="calculaCotizacion()" value="0.18">
+							<span class="tooltiptext">Considerar un valor entre 0.18 y 0.20</span>
+						</div>
+					</td>
+					<td>
+						<div class="tooltip">
+							<label for="vueltas-manivela" class="label-vueltas-manivela">Vueltas manivela</label>
+							<input type="text" class="vueltas-manivela" id="vueltas-manivela" disabled>
+							<span class="tooltiptext">N<sup>o</sup>º vueltas manivela abrir/cerrar</span>
+						</div>
+					</td>
+					</tr>
+					<tr>
+						<td>
+							<div class="tooltip">
+								<label for="paso-rosca-vastago">Paso</label>
+								<input type="text" class="paso-rosca-vastago" id="paso-rosca-vastago" disabled>
+								<label>cm</label>
+								<span class="tooltiptext">Paso de la rosca del v&aacute;stago</span>
+							</div>
+						</td>
+							<div class="tooltip">
+								<label for="lista-posibles-actuadores">Actuadores sugeridos</label>
+								<select name="actuadores" id="lista-posibles-actuadores" class="actuadores" onchange="reloadActuadores()"></select>
+								<span class="tooltiptext">Mecanismos de operaci&oacute;n sugerido(s)</span>
+							</div>
+						</td>
+					</tr>
+					
+					<tr>
+						<td>
+							<div class="tooltip">
+								<label for="tga-vastago">tg a</label>
+								<input type="text" class="tga-vastago" id="tga-vastago" disabled>
+								<label>cm</label>
+								<span class="tooltiptext">Tangente apertura</span>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div class="tooltip">
+								<label for="fm-vastago">fm</label>
+								<input type="text" class="fm-vastago" id="fm-vastago" disabled>
+								<label>cm</label>
+								<span class="tooltiptext">Factor medici&oacute;n</span>
+							</div>
+						</td>
+					</tr>
+			</table>
+				
+			<div>
+				<div class="tooltip">
+					<label for="capacidad_ka_Kg">Capacidad</label>
+					<input type="text" class="capacidad_ka_Kg" id="capacidad_ka_Kg" disabled>
+					<label>kg</label>
+					<span class="tooltiptext">Capacidad ka kg</span>
+				</div>
+				<div class="tooltip">
+					<label for="vastago_d_maxT_mm">Vastago d max@T</label>
+					<input type="text" class="vastago_d_maxT_mm" id="vastago_d_maxT_mm" disabled>
+					<label>mm</label>
+					<span class="tooltiptext">Vastago d max@T</span>
+				</div>
+				<div class="tooltip">
+					<label for="peso_w_Kg">Peso</label>
+					<input type="text" class="peso_w_Kg" id="peso_w_Kg" disabled>
+					<label>kg</label>
+					<span class="tooltiptext">PESO W</span>
+				</div>
+				<div class="tooltip">
+					<label for="rel_Radio">Rel Radio</label>
+					<input type="text" class="rel_Radio" id="rel_Radio" disabled>
+					<label></label>
+					<span class="tooltiptext">REL Radio</span>
+				</div>
+				<div class="tooltip">
+					<label for="max_torque_salida_Lb_Ft">Max Torque Salida</label>
+					<input type="text" class="max_torque_salida_Lb_Ft" id="max_torque_salida_Lb_Ft" disabled>
+					<label>Lb-Ft</label>
+					<span class="tooltiptext">Max Torque salida Lb-Ft</span>
+				</div>
+				<div class="tooltip">
+					<label for="ventaja_mecanica">Ventaja mec&aacute;nica</label>
+					<input type="text" class="ventaja_mecanica" id="ventaja_mecanica" disabled>
+					<label></label>
+					<span class="tooltiptext">Ventaja mec&aacute;nica</span>
+				</div>
+				<div class="tooltip">
+					<label for="altura_c_cm">Altura C</label>
+					<input type="text" class="altura_c_cm" id="altura_c_cm" disabled>
+					<label>cm</label>
+					<span class="tooltiptext">Altura C</span>
+				</div>
+				<div class="tooltip">
+					<label for="diam_eje_mm">Diam eje</label>
+					<input type="text" class="diam_eje_mm" id="diam_eje_mm" disabled>
+					<label>mm</label>
+					<span class="tooltiptext">Di&aacute;metro Eje</span>
+				</div>
+				<div class="tooltip">
+					<label for="brida_tipo_iso_ansi_MSS">Brida</label>
+					<input type="text" class="brida_tipo_iso_ansi_MSS" id="brida_tipo_iso_ansi_MSS" disabled>
+					<label></label>
+					<span class="tooltiptext">BRIDA tipo ISO ANSI MSS</span>
+				</div>
+				<div class="tooltip">
+					<label for="vastago_d_max_ka_mm">V&aacute;stago d max@Ka</label>
+					<input type="text" class="vastago_d_max_ka_mm" id="vastago_d_max_ka_mm" disabled>
+					<label>mm</label>
+					<span class="tooltiptext">V&aacute;stago d max@Ka</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Fin Volante para actuador -->
+
+	<!-- Inicio de la memoria -->
+	<div id="openModalMemoria" class="modalDialog">
+		<div>
+			<a href="#close" title="Close" class="close">X</a>
+			<h3>Memoria de Cálculo</h3>
+			<table class="tablaMemoria">
+				
+				<tr>
+					<td>
+						<div class="tooltip">
+							<label class="label-peso_tablero_compuerta">P</label>
+							<input type="text" class="peso_tablero_compuerta" disabled>
+							<label>daN</label>
+							<span class="tooltiptext">Peso del tablero de la compuerta</span>
+						</div>
+					</td>
+					
+					<td>
+						<div class="tooltip">
+							<input type="text" class="perimetro_sello" disabled>
+							<label>Lados</label>
+							<span class="tooltiptext">Per&iacute;metro de Sello</span> 
+						</div>
+					</td>
+
+					<td>
+						<div class="tooltip">
+							<label>KF</label>
+							<input type="text" class="coeficiente_friccion" value="0.20">
+							<span class="tooltiptext">Coeficiente de fricci&oacute;n</span>
+							<label></label>
+						</div>
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						<div class="tooltip">
+							<label>KJ</label>
+							<input type="text" class="coeficiente_friccion_junta" value="0.85">
+							<span class="tooltiptext">Coeficiente de fricci&oacute;n de junta</span>
+							<label></label>
+						</div>
+
+					</td>
+					<td>
+						<div class="tooltip">
+							<label class="label-superficio_junta_presion">SJ</label>
+							<input type="text" class="superficio_junta_presion" disabled>
+							<label>cm<sup>2</sup></label>
+							<span class="tooltiptext">Superficie de junta en presi&oacute;n</span>
+						</div>
+
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						<div class="tooltip">
+							<label>FO</label>
+							<input type="text" class="esfuerzo_apertura" disabled>
+							<label>daN</label>
+							<span class="tooltiptext">Esfuerzo de Apertura (daN)</span>
+						</div>
+
+					</td>
+					<td>
+						<div class="tooltip">
+							<label class="label-esfuerzo_apertura">FO</label>
+							<input type="text" class="esfuerzo_apertura_kgf" disabled>
+							<label>Kgf</label>
+							<span class="tooltiptext">Esfuerzo de Apertura (Kgf)</span>
+						</div>
+
+					</td>
+					<td>
+						<div class="tooltip">
+							<label>FO</label>
+							<input type="text" class="esfuerzo_apertura_lbf" disabled>
+							<label>lbf</label>
+							<span class="tooltiptext">Esfuerzo de Apertura (lbf)</span>
+						</div>
+
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						<div class="tooltip">
+							<label>FF</label>
+							<input type="text" class="esfuerzo_cierre" disabled>
+							<label>daN</label>
+							<span class="tooltiptext">Esfuerzo de Cierre (daN)</span>
+						</div>
+					</td>
+					<td>
+						<div class="tooltip">
+							<label class="label-esfuerzo_apertura">FF</label>
+							<input type="text" class="esfuerzo_cierre_kgf" disabled>
+							<label>Kgf</label>
+							<span class="tooltiptext">Esfuerzo de Cierre (Kgf)</span>
+						</div>
+					</td>
+					<td>
+						<div class="tooltip">
+							<label>FF</label>
+							<input type="text" class="esfuerzo_cierre_lbf" disabled>
+							<label>lbf</label>
+							<span class="tooltiptext">Esfuerzo de Cierre (lbf)</span>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="tooltip">
+							<label class="label-empuje_hidraulico_sobre_compuerta">F</label>
+							<input type="text" class="empuje_hidraulico_sobre_compuerta" disabled>
+							<label>daN</label>
+							<span class="tooltiptext">Empuje hidr&aacute;ulico sobre compuerta (daN)</span>
+						</div>
+					</td>
+					<td>
+						<div class="tooltip">
+							<label class="label-empuje_hidraulico_sobre_compuerta_kgf">F</label>
+							<input type="text" class="empuje_hidraulico_sobre_compuerta_kgf" disabled>
+							<label>kgf</label>
+							<span class="tooltiptext">Empuje hidr&aacute;ulico sobre compuerta (kgf)</span>
+						</div>
+					</td>
+					<td>
+						<div class="tooltip">
+							<label class="label-empuje_hidraulico_sobre_compuerta_lbf">F</label>
+							<input type="text" class="empuje_hidraulico_sobre_compuerta_lbf" disabled>
+							<label>lbf</label>
+							<span class="tooltiptext">Empuje hidr&aacute;ulico sobre compuerta (lbf)</span>
+						</div>
+					</td>
+				</tr>
+
+			</table>
+
+			<hr>
+				<table class="tablaPesos">
+					<thead>
+						<tr>
+							<th>Pesos (kgf)</th>
+							<th>Verificaci&oacute;n v&aacute;stago al pandeo</th>
+							<th>Tipo Marco</th>
+						</tr>
+					</thead>	
+					<tbody>
+						<tr>
+							<td>
+								<div class="tooltip">
+									<label class="label-pesos">Tab. com.</label>
+									<input type="text" class="peso_tablero_compuerta_round tooltip" disabled>
+									<span class="tooltiptext">Peso Tablero Compuerta</span> 
+								</div>
+							
+							</td>
+						
+							<td>
+								<div class="tooltip">
+									<label class="label-vastago">d</label>
+									<input type="text" class="diametro_vastago tooltip" disabled>
+									<span class="tooltiptext">diametro vastago</span> 
+									<label class=>cm</label>
+									<span class="tooltiptext">Di&aacute;metro V&aacute;stago</span>
+								</div>
+							</td>
+						
+							<td>
+								<div class="tooltip">
+									<label class="label-alt-ped">Al. ped.</label>
+									<input type="text" class="altura_pedestal tooltip" disabled>
+									<label class=>mm</label>
+									<span class="tooltiptext">Altura Pedestal</span>
+								</div>
+							</td>
+						</tr>
+					
+					
+						<tr>
+							<td>
+								<div class="tooltip">
+									<label class="label-pesos">Marco</label>
+									<input type="text" class="peso_marco tooltip" disabled>	
+									<span class="tooltiptext">Marco</span>
+								</div>
+							</td>
+						
+							<td>
+								<div class="tooltip">
+									<label class="label-vastago">LL</label>
+									<input type="text" class="longitud_pandeo tooltip" disabled>
+									<label class=>mm</label>
+									<span class="tooltiptext">Longitud de pandeo considerada</span>
+								</div>
+							</td>
+							<td>
+								<div class="tooltip">
+									<label class="label-alt-ped">Repisa</label>
+									<input type="text" class="marco_repisa" disabled>
+									<span class="tooltiptext">Repisa</span>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="tooltip">
+									<label class="label-pesos">Vastago</label>
+									<input type="text" class="peso_vastago" disabled>
+									<span class="tooltiptext">V&aacute;stago</span>
+								</div>
+							</td>
+						
+							<td>
+								<div class="tooltip">
+									<label class="label-vastago">K</label>
+									<input type="text" class="carga_pandeo" disabled>
+									<label class=>Kg</label>
+									<span class="tooltiptext">Carga de pandeo</span>
+								</div>
+							</td>
+							<td>
+								<div class="tooltip">
+									<label class="label-alt-ped">Integal</label>
+									<input type="text" class="marco_integral" disabled>
+									<span class="tooltiptext">Marco integral</span>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td> 
+								<div class="tooltip">
+									<label class="label-pesos">Pedestal</label>
+									<input type="text" class="peso_pedestal" disabled>
+									<span class="tooltiptext">Peso Pedestal</span>
+								</div>
+							</td>
+						
+							<td>
+								<div class="tooltip">
+									<label class="label-vastago">F</label>
+									<input type="text" class="carga_max_srv" disabled>
+									<label class=>Kg</label>
+									<span class="tooltiptext">Carga m&aacute;xima de servicio</span>
+								</div>
+							</td>
+							<td>
+								<div class="tooltip">
+									<label class="label-alt-ped">Pedest.</label>
+									<input type="text" class="marco_pedestal" disabled>
+									<span class="tooltiptext">Marco pedestal</span>
+								</div>
+							</td>
+						
+						<tr>
+							<td>
+								<div class="tooltip">
+									<label class="label-pesos">Repisa</label>
+									<input type="text" class="peso_repisa" disabled>
+									<span class="tooltiptext">Repisa</span>
+								</div>
+							</td>
+						
+							<td>
+								<div class="tooltip">
+									<label class="label-vastago">Fc</label>
+									<input type="text" class="fuerza_empuje" disabled>
+									<label class=>Kg</label>
+									<span class="tooltiptext">Fuerza empuje v&aacute;stago </span>
+								</div>
+							</td>
+							<td>
+								<div class="tooltip">
+									<label class="label-alt-ped">Al. mar.</label>
+									<input type="text" class="altura_marco" disabled>
+									<label class=>mm</label>
+									<span class="tooltiptext">Altura marco</span>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="tooltip">
+									<label class="label-pesos">Sop. v&aacute;s.</label>
+									<input type="text" class="peso_sop_vastago" disabled>
+									<span class="tooltiptext">Soporte V&aacute;stago</span>
+								</div>
+							</td>
+						
+							<td>
+								<div class="tooltip">
+									<label class="label-vastago">J</label>
+									<input type="text" class="momento_incercia" disabled>
+									<label class=>cm<sup>4</sup></label>
+									<span class="tooltiptext">Momento inercia sección v&aacute;stago</span>
+								</div>
+							</td>
+
+							<td>
+								<div class="tooltip">
+									<label class="label-alt-ped">P. agua</label>
+									<input type="text" class="metro_columna_agua" disabled>
+									<label class=>mCA</label>
+									<span class="tooltiptext">Presi&oacute;n columna agua por metro</span>
+								</div>
+								
+							</td>
+
+						</tr>
+						<tr>
+							<td>
+								<div class="tooltip">
+									<label class="label-pesos">Actuador</label>
+									<input type="text" class="peso_actuador" disabled>
+									<span class="tooltiptext">Actuador</span>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="tooltip">
+									<label class="label-pesos">Volante</label>
+									<input type="text" class="peso_volante" disabled>
+									<span class="tooltiptext">Peso Volante</span>
+								</div>
+							</td>
+							<td>
+								<div class="tooltip">
+									<label class="label-num-apoyos"><b>Num. Apoyos</b></label>
+									<input type="text" class="apoyos_vastago" disabled>
+									<span class="tooltiptext">N&uacute;mero de apoyos al v&aacute;stago</span>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="tooltip">
+									<label class="label-pesos">Acces.</label>
+									<input type="text" class="peso_accesorios" disabled>
+									<span class="tooltiptext">Peso accesorios</span>
+								</div>
+							</td>
+
+							<td>
+								<div class="tooltip">
+									<label class="label-validacion-vastago-al-pandeo"><strong>Validaci&oacute;n</strong></label>
+									<input type="text" class="validacion-vastago-al-pandeo" disabled>
+									<span class="tooltiptext">SIENDO "F" LA MAXIMA CARGA DE SERVICIO F &#62; FUERZA EMPUJE VASTAGO Fc</span>
+								</div>
+		
+							</td>
+							
+						
+						</tr>
+						<tr>
+							<td>
+								<div class="tooltip">
+									<label class="label-pesos"><b>TOTAL</b></label>
+									<input type="text" class="peso_total" disabled>
+									<span class="tooltiptext">Total pesos en Kgf</span>
+								</div>
+							</td>						
+						</tr>
+					</tbody>
+				</table>
+			
+		</div>
+	</div>
+
+
+<!-- FIN DE LA MEMORIA -->
+
+	    </div>
+		
+		<footer>
+			<h4>soy el footer</footer>
+		</footer>
+		
+	</body>
+
+</html>

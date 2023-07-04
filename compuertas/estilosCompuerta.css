@@ -16,10 +16,7 @@ nav {
   padding: 5px 15px;
 }
 
-.contenido{
-	
-	
-  }
+ 
 
 .ancho_util,
 .altura_util,
@@ -419,6 +416,8 @@ a {
   position: relative;
   display: inline-block;
 }
+
+
 
 .tooltip .tooltiptext {
   visibility: hidden;

@@ -1,3 +1,5 @@
+const bootstrap = require('bootstrap');
+
 function calculaPesoPromedio() {
 	
 	let l = parseInt(document.getElementById("ancho_util").value);
@@ -226,6 +228,10 @@ function calculaCotizacion() {
 		document.querySelector('.validacion-vastago-al-pandeo').value = "OK";
 		document.querySelector('.validacion-vastago-al-pandeo').style.background = "green";
 		document.querySelector('.validacion-vastago-al-pandeo').style.color = "white";
+		document.querySelector('.carga_max_srv').style.background = "white";
+		document.querySelector('.fuerza_empuje').style.background = "white";
+		document.querySelector('.carga_max_srv').style.color = "black";
+		document.querySelector('.fuerza_empuje').style.color = "black";
 	}else{
 		document.querySelector('.validacion-vastago-al-pandeo').value = "NOK";
 		document.querySelector('.validacion-vastago-al-pandeo').style.background = "red";
